@@ -3,3 +3,20 @@
 ################################################################################
 
 /.vs
+/HeyTom.Core/HeyTom.Service.TestApi/bin/Debug/netcoreapp3.1
+/HeyTom.Core/HeyTom.Service.TestApi/obj
+/HeyTom.Core/HeyTom.Service.TestApi/Properties
+/HeyTom.Core/.vs/HeyTom.Core
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Cache/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Data/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMachiato.Infra.Oss/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMachiato.Infra.Queue/obj
+*.targets
+*.props
+*.cache
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.DependencyInjection/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Email/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Filter/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Http/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.MvcCore/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Util/obj
