@@ -6,7 +6,16 @@
 
   <ItemGroup>
     <Folder Include="Kafka\" />
-    <Folder Include="RabbitMq\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RabbitMQ.Client" Version="5.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\5.2 - CrossCutting\HeyMacchiato.Infra.Util\HeyMacchiato.Infra.Util.csproj" />
   </ItemGroup>
 
 </Project>

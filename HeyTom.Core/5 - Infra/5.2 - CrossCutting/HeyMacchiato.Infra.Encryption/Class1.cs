@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeyMacchiato.Infra.Email
+namespace HeyMacchiato.Infra.Encryption
 {
 	public class Class1
 	{

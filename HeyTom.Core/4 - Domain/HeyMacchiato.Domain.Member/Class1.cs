@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeyMacchiato.Infra.MvcCore
+namespace HeyMacchiato.Domain.Member
 {
 	public class Class1
 	{

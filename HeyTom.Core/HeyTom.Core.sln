@@ -19,23 +19,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Util", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Util\HeyMacchiato.Infra.Util.csproj", "{04386CE4-3510-42B8-BD70-A009FE785780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Email", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Email\HeyMacchiato.Infra.Email.csproj", "{1E7039FD-550B-4628-AA84-C1E1E8D00991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Email", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Email\HeyMacchiato.Infra.Email.csproj", "{1E7039FD-550B-4628-AA84-C1E1E8D00991}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Http", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Http\HeyMacchiato.Infra.Http.csproj", "{98948608-1BCD-4C7A-9243-345FC43AFFE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Http", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Http\HeyMacchiato.Infra.Http.csproj", "{98948608-1BCD-4C7A-9243-345FC43AFFE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Filter", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Filter\HeyMacchiato.Infra.Filter.csproj", "{B68391EE-B67F-4A1F-BB58-0364AD439B31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Filter", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Filter\HeyMacchiato.Infra.Filter.csproj", "{B68391EE-B67F-4A1F-BB58-0364AD439B31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.DependencyInjection", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.DependencyInjection\HeyMacchiato.Infra.DependencyInjection.csproj", "{C3CF52C3-A1C1-4469-BB5D-59D1F9CDC0FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.DependencyInjection", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.DependencyInjection\HeyMacchiato.Infra.DependencyInjection.csproj", "{C3CF52C3-A1C1-4469-BB5D-59D1F9CDC0FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.MvcCore", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj", "{99D2E2F6-6584-413B-AE2D-EAE8C1FA3C85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.MvcCore", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj", "{99D2E2F6-6584-413B-AE2D-EAE8C1FA3C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Data", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj", "{6124E4D2-4697-4435-8C8F-1F2B20EF5B66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Data", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj", "{6124E4D2-4697-4435-8C8F-1F2B20EF5B66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Cache", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Cache\HeyMacchiato.Infra.Cache.csproj", "{3F36CA52-E2F3-4DE6-A1E2-35D0F71751D9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Cache", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Cache\HeyMacchiato.Infra.Cache.csproj", "{3F36CA52-E2F3-4DE6-A1E2-35D0F71751D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMachiato.Infra.Queue", "5 - Infra\5.1 - Data\HeyMachiato.Infra.Queue\HeyMachiato.Infra.Queue.csproj", "{10D9A462-4235-452E-BBE2-760C50EA8CBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMachiato.Infra.Queue", "5 - Infra\5.1 - Data\HeyMachiato.Infra.Queue\HeyMachiato.Infra.Queue.csproj", "{10D9A462-4235-452E-BBE2-760C50EA8CBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMachiato.Infra.Oss", "5 - Infra\5.1 - Data\HeyMachiato.Infra.Oss\HeyMachiato.Infra.Oss.csproj", "{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMachiato.Infra.Oss", "5 - Infra\5.1 - Data\HeyMachiato.Infra.Oss\HeyMachiato.Infra.Oss.csproj", "{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Encryption", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Encryption\HeyMacchiato.Infra.Encryption.csproj", "{BC67FB39-4322-4F38-B86E-7B1736BC999F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Service.Test.Apps", "2 - Service\HeyMacchiato.Service.Test.Apps\HeyMacchiato.Service.Test.Apps.csproj", "{8390942D-2357-4889-9728-62AB988FD6C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Domain.Member", "4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj", "{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Domain.Core", "4 - Domain\HeyMacchiato.Domain.Core\HeyMacchiato.Domain.Core.csproj", "{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,6 +91,22 @@ Global
 		{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC67FB39-4322-4F38-B86E-7B1736BC999F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC67FB39-4322-4F38-B86E-7B1736BC999F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC67FB39-4322-4F38-B86E-7B1736BC999F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC67FB39-4322-4F38-B86E-7B1736BC999F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8390942D-2357-4889-9728-62AB988FD6C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8390942D-2357-4889-9728-62AB988FD6C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8390942D-2357-4889-9728-62AB988FD6C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8390942D-2357-4889-9728-62AB988FD6C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +124,10 @@ Global
 		{3F36CA52-E2F3-4DE6-A1E2-35D0F71751D9} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
 		{10D9A462-4235-452E-BBE2-760C50EA8CBD} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
 		{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
+		{BC67FB39-4322-4F38-B86E-7B1736BC999F} = {EF8AF2FD-8C8B-4763-B937-312B8C14D1E6}
+		{8390942D-2357-4889-9728-62AB988FD6C5} = {1DD12EA8-4963-40B8-B45E-64730509DAC3}
+		{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0} = {A955E5C7-AB7C-40C8-9C63-28CB4A747992}
+		{6EBC5D77-5EBD-4CC7-9641-68D510A53F86} = {A955E5C7-AB7C-40C8-9C63-28CB4A747992}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF443A0E-D499-402E-8D9D-E20ECE0B088A}

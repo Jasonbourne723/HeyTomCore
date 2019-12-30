@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HeyMachiato.Infra.Queue
+namespace HeyMacchiato.Domain.Core
 {
 	public class Class1
 	{

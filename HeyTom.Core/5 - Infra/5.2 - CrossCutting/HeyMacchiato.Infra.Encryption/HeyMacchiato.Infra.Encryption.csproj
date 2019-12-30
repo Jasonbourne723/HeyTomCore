@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HeyMacchiato.Infra.Util\HeyMacchiato.Infra.Util.csproj" />
-  </ItemGroup>
-
 </Project>
