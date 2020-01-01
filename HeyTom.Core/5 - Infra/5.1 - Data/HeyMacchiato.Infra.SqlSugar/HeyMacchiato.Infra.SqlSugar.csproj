@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Util\HeyMacchiato.Infra.Util.csproj" />
+    <PackageReference Include="sqlSugarCore" Version="5.0.0.11" />
   </ItemGroup>
 
 </Project>

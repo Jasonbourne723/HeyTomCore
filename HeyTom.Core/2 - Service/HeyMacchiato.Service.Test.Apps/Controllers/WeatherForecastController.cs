@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HeyMacchiato.Domain.Member.Repository;
+using HeyMacchiato.Infra.Data.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -27,6 +29,8 @@ namespace HeyMacchiato.Service.Test.Apps.Controllers
 		public IEnumerable<WeatherForecast> Get()
 		{
 			var rng = new Random();
+			IMemberRepository memberRepository = new MemberRepository();
+			var aa = memberRepository.GetList(10);
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
 				Date = DateTime.Now.AddDays(index),

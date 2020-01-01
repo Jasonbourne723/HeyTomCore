@@ -4,5 +4,15 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.EFCore\HeyMacchiato.Infra.EFCore.csproj" />
+  </ItemGroup>
+
 
 </Project>

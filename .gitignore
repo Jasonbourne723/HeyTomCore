@@ -35,3 +35,14 @@
 /HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Http/bin/Debug/netstandard2.0
 /HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.MvcCore/bin/Debug/netstandard2.0
 /HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Util/bin/Debug/netstandard2.0
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.OAuth.Apps/bin/Debug/netcoreapp3.1
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.OAuth.Apps/obj
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.OAuth.Apps/Properties
+/HeyTom.Core/3 - Application/HeyMacchiato.Application.Member/bin/Debug/netstandard2.0
+/HeyTom.Core/3 - Application/HeyMacchiato.Application.Member/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Dapper/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Dapper/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.EFCore/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.EFCore/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.SqlSugar/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.SqlSugar/obj
