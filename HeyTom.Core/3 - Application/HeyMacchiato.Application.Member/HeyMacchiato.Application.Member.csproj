@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AutoMapper\" />
-    <Folder Include="Interface\" />
-    <Folder Include="Implementation\" />
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HeyMacchiato.Infra.SqlSugar
 {
-	public class BaseDbContext<T> where T : class, new()
+	public class BaseDbContext<T> where T : class,new()
 	{
 		private SqlSugarClient Db;//用来处理事务多表查询和复杂的操作
 		public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }//用来处理T表的常用操作

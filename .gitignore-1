@@ -1,0 +1,48 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/HeyTom.Core/HeyTom.Service.TestApi/bin/Debug/netcoreapp3.1
+/HeyTom.Core/HeyTom.Service.TestApi/obj
+/HeyTom.Core/HeyTom.Service.TestApi/Properties
+/HeyTom.Core/.vs/HeyTom.Core
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Cache/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Data/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMachiato.Infra.Oss/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMachiato.Infra.Queue/obj
+*.targets
+*.props
+*.cache
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.DependencyInjection/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Email/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Filter/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Http/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.MvcCore/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Util/obj
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.Test.Apps/bin/Debug/netcoreapp3.1
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.Test.Apps/obj
+/HeyTom.Core/4 - Domain/HeyMacchiato.Domain.Core/bin/Debug/netstandard2.0
+/HeyTom.Core/4 - Domain/HeyMacchiato.Domain.Core/obj
+/HeyTom.Core/4 - Domain/HeyMacchiato.Domain.Member/bin/Debug/netstandard2.0
+/HeyTom.Core/4 - Domain/HeyMacchiato.Domain.Member/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Data/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMachiato.Infra.Queue/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Email/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Encryption/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Encryption/obj
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Filter/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Http/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.MvcCore/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.2 - CrossCutting/HeyMacchiato.Infra.Util/bin/Debug/netstandard2.0
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.OAuth.Apps/bin/Debug/netcoreapp3.1
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.OAuth.Apps/obj
+/HeyTom.Core/2 - Service/HeyMacchiato.Service.OAuth.Apps/Properties
+/HeyTom.Core/3 - Application/HeyMacchiato.Application.Member/bin/Debug/netstandard2.0
+/HeyTom.Core/3 - Application/HeyMacchiato.Application.Member/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Dapper/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.Dapper/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.EFCore/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.EFCore/obj
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.SqlSugar/bin/Debug/netstandard2.0
+/HeyTom.Core/5 - Infra/5.1 - Data/HeyMacchiato.Infra.SqlSugar/obj

@@ -5,16 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
-    <Folder Include="FluentValidation\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="8.6.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\HeyMacchiato.Domain.Core\HeyMacchiato.Domain.Core.csproj" />
   </ItemGroup>
-
 </Project>

@@ -11,9 +11,9 @@ namespace HeyMacchiato.Domain.Core.IRepository
 
 		T GetById(long Id);
 
-		ResultModel Insert(T entity);
+		ResultModel Add(T entity);
 
-		ResultModel InsertBulk(List<T> entities);
+		ResultModel Add(List<T> entities);
 
 		ResultModel Update(T entity);
 

@@ -7,6 +7,6 @@ namespace HeyMacchiato.Domain.Member.Repository
 {
 	public interface IMemberRepository : IBaseRepository<Models.Member>
 	{
-
+		Models.Member GetByEmail(string email);
 	}
 }
