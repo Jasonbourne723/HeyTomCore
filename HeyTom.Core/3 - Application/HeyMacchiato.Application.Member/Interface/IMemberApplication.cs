@@ -1,4 +1,5 @@
-﻿using HeyMacchiato.Domain.Member.DTO;
+﻿using HeyMacchiato.Application.Member.ViewModel;
+using HeyMacchiato.Domain.Member.DTO;
 using HeyMacchiato.Infra.Util;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,6 @@ namespace HeyMacchiato.Application.Member.Interface
 {
 	public interface IMemberApplication
 	{
-		ResultModel Register(RegisterDTO registerDTO);
+		ResultModel Register(RegisterViewModel registerViewModel);
 	}
 }

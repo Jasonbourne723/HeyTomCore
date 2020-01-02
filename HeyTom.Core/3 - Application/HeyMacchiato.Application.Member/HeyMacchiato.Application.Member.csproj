@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.CsRedis\HeyMacchiato.Infra.CsRedis.csproj" />
   </ItemGroup>
 
 </Project>

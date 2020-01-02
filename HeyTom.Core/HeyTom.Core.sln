@@ -35,25 +35,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMachiato.Infra.Queue", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMachiato.Infra.Oss", "5 - Infra\5.1 - Data\HeyMachiato.Infra.Oss\HeyMachiato.Infra.Oss.csproj", "{1D462F21-F61E-4C75-8F50-FD1EEAB90AF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Encryption", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Encryption\HeyMacchiato.Infra.Encryption.csproj", "{BC67FB39-4322-4F38-B86E-7B1736BC999F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Encryption", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Encryption\HeyMacchiato.Infra.Encryption.csproj", "{BC67FB39-4322-4F38-B86E-7B1736BC999F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Service.Test.Apps", "2 - Service\HeyMacchiato.Service.Test.Apps\HeyMacchiato.Service.Test.Apps.csproj", "{8390942D-2357-4889-9728-62AB988FD6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Service.Test.Apps", "2 - Service\HeyMacchiato.Service.Test.Apps\HeyMacchiato.Service.Test.Apps.csproj", "{8390942D-2357-4889-9728-62AB988FD6C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Domain.Member", "4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj", "{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Domain.Member", "4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj", "{58E3B6BD-E2A5-47B5-A1C9-334B4104FAD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Domain.Core", "4 - Domain\HeyMacchiato.Domain.Core\HeyMacchiato.Domain.Core.csproj", "{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Domain.Core", "4 - Domain\HeyMacchiato.Domain.Core\HeyMacchiato.Domain.Core.csproj", "{6EBC5D77-5EBD-4CC7-9641-68D510A53F86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Application.Member", "3 - Application\HeyMacchiato.Application.Member\HeyMacchiato.Application.Member.csproj", "{FE77616C-0678-41ED-ADB3-87379EFCAFF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Application.Member", "3 - Application\HeyMacchiato.Application.Member\HeyMacchiato.Application.Member.csproj", "{FE77616C-0678-41ED-ADB3-87379EFCAFF9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Dapper", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Dapper\HeyMacchiato.Infra.Dapper.csproj", "{24B72433-65EB-4B03-BC1B-057C191A3220}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.SqlSugar", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.SqlSugar\HeyMacchiato.Infra.SqlSugar.csproj", "{8748B777-F968-463F-A670-2E3BA1EA9BCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.SqlSugar", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.SqlSugar\HeyMacchiato.Infra.SqlSugar.csproj", "{8748B777-F968-463F-A670-2E3BA1EA9BCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.EFCore", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.EFCore\HeyMacchiato.Infra.EFCore.csproj", "{91D9E97E-5080-4985-BD14-FA459E5DC87B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.EFCore", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.EFCore\HeyMacchiato.Infra.EFCore.csproj", "{91D9E97E-5080-4985-BD14-FA459E5DC87B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Data", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj", "{B57B10FB-D15F-4105-BE2A-91D43FDE6777}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Data", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj", "{B57B10FB-D15F-4105-BE2A-91D43FDE6777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Service.OAuth.Apps", "2 - Service\HeyMacchiato.Service.OAuth.Apps\HeyMacchiato.Service.OAuth.Apps.csproj", "{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Service.OAuth.Apps", "2 - Service\HeyMacchiato.Service.OAuth.Apps\HeyMacchiato.Service.OAuth.Apps.csproj", "{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.CsRedis", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.CsRedis\HeyMacchiato.Infra.CsRedis.csproj", "{D1E6EAD4-DD93-4681-A962-1350188861FF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,6 +139,10 @@ Global
 		{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E6EAD4-DD93-4681-A962-1350188861FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E6EAD4-DD93-4681-A962-1350188861FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E6EAD4-DD93-4681-A962-1350188861FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E6EAD4-DD93-4681-A962-1350188861FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -163,6 +169,7 @@ Global
 		{91D9E97E-5080-4985-BD14-FA459E5DC87B} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
 		{B57B10FB-D15F-4105-BE2A-91D43FDE6777} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
 		{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F} = {1DD12EA8-4963-40B8-B45E-64730509DAC3}
+		{D1E6EAD4-DD93-4681-A962-1350188861FF} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF443A0E-D499-402E-8D9D-E20ECE0B088A}

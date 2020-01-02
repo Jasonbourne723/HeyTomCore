@@ -11,7 +11,7 @@ namespace HeyMacchiato.Infra.Email
 	{
 		public static ResultModel Send(List<string> toEmail, string subject, string content, string fromName, string userName = null, string host = "smtp.qq.com", string fromEmail = "420994592@qq.com", string passWord = "tcjiawjzjfodbifd")
 		{
-			var result = new ResultModel(1);
+			var result = new ResultModel(1, "发送成功");
 			SmtpClient smtpClient = new SmtpClient
 			{
 				Host = host,

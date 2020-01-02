@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using HeyMacchiato.Infra.MvcCore;
+using HeyMacchiato.Infra.DependencyInjection;
 
 namespace HeyMacchiato.Service.OAuth.Apps
 {
@@ -39,6 +40,7 @@ namespace HeyMacchiato.Service.OAuth.Apps
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddSwagger("Login");
+			services.AddOwnInject();
 			services.AddControllers();
 		}
 
