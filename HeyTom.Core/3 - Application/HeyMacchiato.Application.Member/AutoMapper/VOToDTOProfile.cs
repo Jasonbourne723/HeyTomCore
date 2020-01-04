@@ -11,7 +11,7 @@ namespace HeyMacchiato.Application.Member.AutoMapper
 	{
 		public VOToDTOProfile()
 		{
-			CreateMap<RegisterViewModel, RegisterDTO>();
+			CreateMap<RegisterDTO, RegisterCommand>();
 		}
 	}
 }

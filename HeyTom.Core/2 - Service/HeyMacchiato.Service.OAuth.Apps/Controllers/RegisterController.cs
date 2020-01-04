@@ -38,7 +38,7 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
 		/// <returns></returns>
 		[HttpPost]
 		[ProducesDefaultResponseType(typeof(ResultModel))]
-		public IActionResult Post([FromBody]RegisterViewModel registerViewModel)
+		public IActionResult Post([FromBody]RegisterDTO registerViewModel)
 		{
 			var result = new ResultModel();
 			return this.Wrapper(ref result, () =>
@@ -50,26 +50,17 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
 		/// <summary>
 		/// 发送注册验证码
 		/// </summary>
-		/// <param name="emailViewModel"></param>
+		/// <param name="emailDTO"></param>
 		/// <returns></returns>
 		[Route("[action]")]
 		[HttpPost]
-		[ProducesDefaultResponseType(typeof(TResultModel<VerificationCodelViewModel>))]
-		public IActionResult VerificationCode([FromBody] EmailViewModel emailViewModel)
+		[ProducesDefaultResponseType(typeof(TResultModel<VerificationCodelDTO>))]
+		public IActionResult VerificationCode([FromBody] EmailDTO emailDTO)
 		{
 			var result = new ResultModel(1);
 			return this.Wrapper(ref result, () =>
 			{
-				var key = $"VerificationCodel:Email:{emailViewModel.Email}";
-				var toEmail = new List<string>() { emailViewModel.Email };
-				var random = new Random();
-				var code = random.Next(1000, 10000);
-
-				new CsRedisBase().set(key, code.ToString(), 120);
-
-				var subject = "Hey Macchiato 注册验证码";
-				var content = $"您的验证码是{code.ToString()},有效期120秒!";
-				result = EmailHelper.Send(toEmail, subject, content, "Hey Macchiato");
+				result = _memberApplication.SendRegisterVerificaionCode(emailDTO);
 			}, true);
 		}
 	}

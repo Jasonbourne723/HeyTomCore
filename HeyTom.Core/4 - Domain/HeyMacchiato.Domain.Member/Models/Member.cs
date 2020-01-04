@@ -15,6 +15,14 @@ namespace HeyMacchiato.Domain.Member.Models
 		{
 			NickName = nickName;
 			GitHubId = gitHubId;
+			Email = "";
+			Password = "";
+			Name = "";
+			Sex = 0;
+			Birthday = DateTime.MinValue;
+			WxOpenId = "";
+			GradeId = 0;
+			Point = 0;
 		}
 
 		public Member(string nickName, string email, string password)
@@ -22,6 +30,13 @@ namespace HeyMacchiato.Domain.Member.Models
 			NickName = nickName;
 			Email = email;
 			Password = password;
+			Name = "";
+			Sex = 0;
+			Birthday = DateTime.MinValue;
+			WxOpenId = "";
+			GitHubId = "";
+			GradeId = 0;
+			Point = 0;
 		}
 
 		public int Id { get;  set; }

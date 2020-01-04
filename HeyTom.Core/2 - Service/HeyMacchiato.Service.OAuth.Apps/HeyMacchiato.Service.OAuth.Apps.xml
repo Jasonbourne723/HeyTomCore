@@ -9,14 +9,20 @@
             登录控制器
             </summary>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.#ctor">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.#ctor(HeyMacchiato.Application.Member.Interface.IMemberApplication)">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.Get(System.String,System.String,System.String)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.Get(System.String,System.String)">
             <summary>
             邮箱登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.Test">
+            <summary>
+            测试token
             </summary>
             <returns></returns>
         </member>
@@ -30,18 +36,18 @@
             构造函数
             </summary>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.Post(HeyMacchiato.Application.Member.ViewModel.RegisterViewModel)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.Post(HeyMacchiato.Application.Member.ViewModel.RegisterDTO)">
             <summary>
             邮箱注册
             </summary>
             <param name="registerViewModel"></param>
             <returns></returns>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.VerificationCode(HeyMacchiato.Application.Member.ViewModel.EmailViewModel)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.VerificationCode(HeyMacchiato.Application.Member.ViewModel.EmailDTO)">
             <summary>
             发送注册验证码
             </summary>
-            <param name="emailViewModel"></param>
+            <param name="emailDTO"></param>
             <returns></returns>
         </member>
         <member name="T:HeyMacchiato.Service.OAuth.Apps.Program">

@@ -16,13 +16,13 @@ namespace HeyMacchiato.Domain.Member.Service
 		/// <summary>
 		/// 邮箱注册
 		/// </summary>
-		/// <param name="registerDTO"></param>
+		/// <param name="registerCommand"></param>
 		/// <returns></returns>
-		public ResultModel Register(RegisterDTO registerDTO)
+		public ResultModel Register(RegisterCommand registerCommand)
 		{
-			var result = registerDTO.Validate();
+			var result = registerCommand.Validate();
 			if (!result.IsSuccess) return result;
-			if (_memberRepository.GetByEmail(registerDTO.Email) != null)
+			if (_memberRepository.GetByEmail(registerCommand.Email) != null)
 			{
 				result.Message = "";
 				return new ResultModel()
@@ -31,7 +31,7 @@ namespace HeyMacchiato.Domain.Member.Service
 					Message = "该邮箱已经注册过账号,不能重复使用"
 				};
 			}
-			var member = new Models.Member(registerDTO.NickName, registerDTO.Email, registerDTO.Password);
+			var member = new Models.Member(registerCommand.NickName, registerCommand.Email, registerCommand.Password);
 			return _memberRepository.Add(member);
 		}
 	}

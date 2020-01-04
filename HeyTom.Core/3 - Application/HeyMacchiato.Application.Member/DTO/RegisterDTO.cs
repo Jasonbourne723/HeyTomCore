@@ -4,7 +4,7 @@ using System.Text;
 
 namespace HeyMacchiato.Application.Member.ViewModel
 {
-	public class RegisterViewModel
+	public class RegisterDTO
 	{
 		/// <summary>
 		/// 邮箱

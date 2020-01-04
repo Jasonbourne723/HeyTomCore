@@ -10,7 +10,7 @@ namespace HeyMacchiato.Domain.Member.DTO
 	/// <summary>
 	/// 注册DTO
 	/// </summary>
-	public class RegisterDTO
+	public class RegisterCommand
 	{
 		/// <summary>
 		/// 邮箱

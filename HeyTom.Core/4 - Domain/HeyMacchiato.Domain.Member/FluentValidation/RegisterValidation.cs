@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HeyMacchiato.Domain.Member.FluentValidation
 {
-	public class RegisterValidation : AbstractValidator<RegisterDTO>
+	public class RegisterValidation : AbstractValidator<RegisterCommand>
 	{
 		public RegisterValidation()
 		{

@@ -11,6 +11,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\4 - Domain\HeyMacchiato.Domain.Member\HeyMacchiato.Domain.Member.csproj" />
     <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.CsRedis\HeyMacchiato.Infra.CsRedis.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Email\HeyMacchiato.Infra.Email.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Encryption\HeyMacchiato.Infra.Encryption.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Jwt\HeyMacchiato.Infra.Jwt.csproj" />
   </ItemGroup>
 
 </Project>

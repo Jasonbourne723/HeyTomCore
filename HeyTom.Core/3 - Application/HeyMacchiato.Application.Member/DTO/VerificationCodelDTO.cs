@@ -8,7 +8,7 @@ namespace HeyMacchiato.Application.Member.ViewModel
 	/// <summary>
 	/// 
 	/// </summary>
-	public class VerificationCodelViewModel
+	public class VerificationCodelDTO
 	{
 		/// <summary>
 		/// 验证码
@@ -16,7 +16,7 @@ namespace HeyMacchiato.Application.Member.ViewModel
 		public string VerificationCode { get; set; }
 	}
 
-	public class EmailViewModel
+	public class EmailDTO
 	{
 		/// <summary>
 		/// 邮箱

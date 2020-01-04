@@ -8,6 +8,6 @@ namespace HeyMacchiato.Domain.Member.Service
 {
 	public interface IMemberService
 	{
-		ResultModel Register(RegisterDTO registerDTO);
+		ResultModel Register(RegisterCommand registerCommand);
 	}
 }
