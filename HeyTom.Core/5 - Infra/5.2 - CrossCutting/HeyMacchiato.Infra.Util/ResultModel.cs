@@ -21,7 +21,25 @@ namespace HeyMacchiato.Infra.Util
 
 		public int ResultNo { get; set; }
 
-		public string Message { get; set; }
+		private string message;
+		public string Message
+		{
+			get
+			{ 
+				if (ResultNo > 0)
+				{
+					return "Success";
+				}
+				else
+				{
+					return message;
+				}
+			}
+			set
+			{
+				message = value;
+			}
+		}
 
 		public bool IsSuccess => (ResultNo > 0);
 	}

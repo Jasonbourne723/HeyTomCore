@@ -7,7 +7,7 @@ using System.Text;
 
 namespace HeyMacchiato.Infra.Data.Repository
 {
-	public class BaseRepository<T> : IBaseRepository<T> where T : class,new()
+	public class BaseRepository<T> : IBaseRepository<T> where T : class, new()
 	{
 		protected BaseDbContext<T> _db;
 
@@ -44,6 +44,21 @@ namespace HeyMacchiato.Infra.Data.Repository
 		public ResultModel Update(T entity)
 		{
 			return new ResultModel(_db.Update(entity));
+		}
+
+		public ResultModel BeginTransaction(Action action)
+		{
+			var result = new ResultModel(1);
+			try {
+				_db.Db.BeginTran();
+				action();
+				_db.Db.CommitTran();
+			} catch (Exception ex) {
+				_db.Db.RollbackTran();
+				result.ResultNo = -1;
+				result.Message = ex.Message;
+			}
+			return result;
 		}
 	}
 }

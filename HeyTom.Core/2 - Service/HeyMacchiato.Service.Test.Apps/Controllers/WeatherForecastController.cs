@@ -31,6 +31,7 @@ namespace HeyMacchiato.Service.Test.Apps.Controllers
 			var rng = new Random();
 			IMemberRepository memberRepository = new MemberRepository();
 			var aa = memberRepository.GetList(10);
+			_logger.Log(LogLevel.Information, "aa");
 			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
 			{
 				Date = DateTime.Now.AddDays(index),

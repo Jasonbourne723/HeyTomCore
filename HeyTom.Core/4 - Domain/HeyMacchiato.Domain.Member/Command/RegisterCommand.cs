@@ -1,11 +1,10 @@
 ﻿using HeyMacchiato.Domain.Member.FluentValidation;
 using HeyMacchiato.Infra.Util;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HeyMacchiato.Domain.Member.DTO
+namespace HeyMacchiato.Domain.Member.Command
 {
 	/// <summary>
 	/// 注册DTO

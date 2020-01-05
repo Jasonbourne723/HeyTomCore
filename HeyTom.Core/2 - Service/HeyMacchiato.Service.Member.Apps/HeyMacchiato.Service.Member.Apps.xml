@@ -4,5 +4,37 @@
         <name>HeyMacchiato.Service.Member.Apps</name>
     </assembly>
     <members>
+        <member name="M:HeyMacchiato.Service.Member.Apps.Controllers.MemberController.Get(System.String)">
+            <summary>
+            获取会员信息
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Member.Apps.Controllers.MemberController.Put(HeyMacchiato.Application.Member.DTO.UpdateInfoDTO)">
+            <summary>
+            修改会员基础资料
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:HeyMacchiato.Service.Member.Apps.Controllers.PostController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:HeyMacchiato.Service.Member.Apps.Controllers.PostController.Post(HeyMacchiato.Application.Member.DTO.CreatePostDTO)">
+            <summary>
+            发帖
+            </summary>
+            <param name="createPostDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Member.Apps.Controllers.PostController.Get(System.Int32)">
+            <summary>
+            获取个人帖子列表
+            </summary>
+            <param name="memberId"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -18,7 +18,8 @@ namespace HeyMacchiato.Infra.DependencyInjection
 		/// <returns></returns>
 		public static IServiceCollection AddOwnInject(this IServiceCollection services)
 		{
-			services.AddAutoMapper(typeof(VOToDTOProfile));
+			services.AddAutoMapper(typeof(DTOToCommandProfile))
+				.AddAutoMapper(typeof(DOToDTOProfile));
 			services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyMacchiato.Infra.Data")))
 				.AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
 				.AsImplementedInterfaces()

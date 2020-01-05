@@ -20,5 +20,7 @@ namespace HeyMacchiato.Domain.Core.IRepository
 		ResultModel Delete(long Id);
 
 		ResultModel Deletes(List<long> Ids);
+
+		ResultModel BeginTransaction(Action action);
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using HeyMacchiato.Domain.Member.DTO;
+using HeyMacchiato.Domain.Member.Command;
 using System;
 using System.Collections.Generic;
 using System.Text;

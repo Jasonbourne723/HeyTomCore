@@ -1,8 +1,7 @@
 ﻿using AutoMapper;
 using HeyMacchiato.Application.Member.DTO;
 using HeyMacchiato.Application.Member.Interface;
-using HeyMacchiato.Application.Member.ViewModel;
-using HeyMacchiato.Domain.Member.DTO;
+using HeyMacchiato.Domain.Member.Command;
 using HeyMacchiato.Domain.Member.Repository;
 using HeyMacchiato.Domain.Member.Service;
 using HeyMacchiato.Infra.CsRedis;
@@ -22,16 +21,19 @@ namespace HeyMacchiato.Application.Member.Implementation
 		private readonly IMemberService _memberService;
 		private readonly IMemberRepository _memberRepository;
 		private readonly PermissionRequirement _permissionRequirement;
+		private readonly IPostRepository _postRepository;
 		private readonly IMapper _mapper;
 
 		public MemberApplication(IMemberService memberService,
 										  IMemberRepository memberRepository,
 										  PermissionRequirement permissionRequirement,
+										  IPostRepository postRepository,
 										  IMapper mapper)
 		{
 			this._memberService = memberService;
 			this._memberRepository = memberRepository;
 			this._permissionRequirement = permissionRequirement;
+			this._postRepository = postRepository;
 			this._mapper = mapper;
 		}
 
@@ -103,6 +105,57 @@ namespace HeyMacchiato.Application.Member.Implementation
 			var subject = "Hey Macchiato 注册验证码";
 			var content = $"您的验证码是{code.ToString()},有效期120秒!";
 			return EmailHelper.Send(toEmail, subject, content, "Hey Macchiato");
+		}
+
+		/// <summary>
+		/// 获取会员信息
+		/// </summary>
+		/// <param name="emailDTO"></param>
+		/// <returns></returns>
+		public TResultModel<MemberDTO> GetMemberByEmail(string email)
+		{
+			var member = _memberRepository.GetByEmail(email);
+			if (member != null)
+			{
+				return new TResultModel<MemberDTO>(1, "Success")
+				{
+					TModel = _mapper.Map<MemberDTO>(member)
+				};
+			}
+			return new TResultModel<MemberDTO>(-1,"未找到会员信息");
+		}
+		/// <summary>
+		/// 更新会员信息
+		/// </summary>
+		/// <param name="updateInfoDTO"></param>
+		/// <returns></returns>
+		public ResultModel UpdateMemberInfo(UpdateInfoDTO updateInfoDTO)
+		{
+			var updateInfoCommand = _mapper.Map<UpdateInfoCommand>(updateInfoDTO);
+			return _memberService.UpdateInfo(updateInfoCommand);
+		}
+
+		/// <summary>
+		/// 发帖
+		/// </summary>
+		/// <param name="createPostDTO"></param>
+		/// <returns></returns>
+		public ResultModel CreatePost(CreatePostDTO createPostDTO)
+		{
+			var postCommand = _mapper.Map<PostCommand>(createPostDTO);
+			return _memberService.Post(postCommand);
+		}
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="memberId"></param>
+		/// <returns></returns>
+		public TResultModel<List<PostDTO>> GetPost(int memberId)
+		{
+			var posts = _postRepository.GetByMemberId(memberId);
+			return new TResultModel<List<PostDTO>>(1) {
+				TModel = _mapper.Map<List<PostDTO>>(posts)
+			};
 		}
 	}
 }

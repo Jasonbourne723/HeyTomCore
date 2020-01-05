@@ -1268,6 +1268,7 @@
       },
       "HeyMacchiato.Infra.SqlSugar/1.0.0": {
         "dependencies": {
+          "HeyMacchiato.Domain.Core": "1.0.0",
           "sqlSugarCore": "5.0.0.11"
         },
         "runtime": {

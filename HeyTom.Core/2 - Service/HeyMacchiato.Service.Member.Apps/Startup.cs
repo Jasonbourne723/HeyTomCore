@@ -16,6 +16,8 @@ using HeyMacchiato.Infra.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace HeyMacchiato.Service.Member.Apps
 {
@@ -59,17 +61,15 @@ namespace HeyMacchiato.Service.Member.Apps
 				 new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes("sdfsdfsrty45634kkhllghtdgdfss345t678fs")), SecurityAlgorithms.HmacSha256),//签名凭据
 				expiration: TimeSpan.FromSeconds(300)//接口的过期时间，注意这里没有了缓冲时间，你也可以自定义，在上边的TokenValidationParameters的 ClockSkew
 			);
-			services.AddAuthentication(x =>
-			{
+			services.AddAuthentication(x => {
 				x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
 				x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 			})
-			.AddJwtBearer(o =>
-			{
+			.AddJwtBearer(o => {
 				o.TokenValidationParameters = tokenValidationParameters;
 			});
 			#endregion
-			services.AddSwagger("Login");
+			services.AddSwagger("Member");
 			services.AddSingleton(permissionRequirement);
 			services.AddOwnInject();
 			services.AddControllers();
@@ -82,12 +82,11 @@ namespace HeyMacchiato.Service.Member.Apps
 			{
 				app.UseDeveloperExceptionPage();
 			}
-
+			app.UseSwaggerUI("Member");
 			app.UseRouting();
 			app.UseAuthentication();
 			app.UseAuthorization();
-			app.UseEndpoints(endpoints =>
-			{
+			app.UseEndpoints(endpoints => {
 				endpoints.MapControllers();
 			});
 		}

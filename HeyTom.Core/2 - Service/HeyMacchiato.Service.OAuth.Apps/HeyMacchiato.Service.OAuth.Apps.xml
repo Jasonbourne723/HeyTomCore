@@ -36,14 +36,14 @@
             构造函数
             </summary>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.Post(HeyMacchiato.Application.Member.ViewModel.RegisterDTO)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.Post(HeyMacchiato.Application.Member.DTO.RegisterDTO)">
             <summary>
             邮箱注册
             </summary>
             <param name="registerViewModel"></param>
             <returns></returns>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.VerificationCode(HeyMacchiato.Application.Member.ViewModel.EmailDTO)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.VerificationCode(HeyMacchiato.Application.Member.DTO.EmailDTO)">
             <summary>
             发送注册验证码
             </summary>

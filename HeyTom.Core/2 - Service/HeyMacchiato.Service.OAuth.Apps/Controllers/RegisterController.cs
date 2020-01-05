@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using HeyMacchiato.Application.Member.Interface;
-using HeyMacchiato.Application.Member.ViewModel;
+using HeyMacchiato.Application.Member.DTO;
 using HeyMacchiato.Infra.CsRedis;
 using HeyMacchiato.Infra.Email;
 using HeyMacchiato.Infra.MvcCore;

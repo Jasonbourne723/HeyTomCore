@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace HeyMacchiato.Application.Member.ViewModel
+namespace HeyMacchiato.Application.Member.DTO
 {
 	/// <summary>
 	/// 
