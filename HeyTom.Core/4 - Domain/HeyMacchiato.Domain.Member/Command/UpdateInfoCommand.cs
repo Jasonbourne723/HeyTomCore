@@ -1,11 +1,12 @@
-﻿using HeyMacchiato.Domain.Member.FluentValidation;
+﻿using HeyMacchiato.Domain.Core.Command;
+using HeyMacchiato.Domain.Member.FluentValidation;
 using HeyMacchiato.Infra.Util;
 using System;
 using System.Linq;
 
 namespace HeyMacchiato.Domain.Member.Command
 {
-	public class UpdateInfoCommand
+	public class UpdateInfoCommand : ICommand
 	{
 		public int Id { get; set; }
 		/// <summary>

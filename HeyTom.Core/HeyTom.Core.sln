@@ -55,11 +55,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Data", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Service.OAuth.Apps", "2 - Service\HeyMacchiato.Service.OAuth.Apps\HeyMacchiato.Service.OAuth.Apps.csproj", "{DDBE9F7F-6AA0-44DB-B35A-BC649E332C7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.CsRedis", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.CsRedis\HeyMacchiato.Infra.CsRedis.csproj", "{D1E6EAD4-DD93-4681-A962-1350188861FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.CsRedis", "5 - Infra\5.1 - Data\HeyMacchiato.Infra.CsRedis\HeyMacchiato.Infra.CsRedis.csproj", "{D1E6EAD4-DD93-4681-A962-1350188861FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Jwt", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Jwt\HeyMacchiato.Infra.Jwt.csproj", "{FAE58924-9C01-46E0-B835-CF4F83120E1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Infra.Jwt", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Jwt\HeyMacchiato.Infra.Jwt.csproj", "{FAE58924-9C01-46E0-B835-CF4F83120E1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Service.Member.Apps", "2 - Service\HeyMacchiato.Service.Member.Apps\HeyMacchiato.Service.Member.Apps.csproj", "{5ED86708-6417-452F-AF7C-EAF73512F4CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Service.Member.Apps", "2 - Service\HeyMacchiato.Service.Member.Apps\HeyMacchiato.Service.Member.Apps.csproj", "{5ED86708-6417-452F-AF7C-EAF73512F4CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1587D92A-B0D4-4319-9249-AD4BA8D5CB6D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

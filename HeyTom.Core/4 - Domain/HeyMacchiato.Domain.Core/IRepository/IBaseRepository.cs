@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HeyMacchiato.Domain.Core.IRepository
 {
-	public interface IBaseRepository<T> where T : class,new()
+	public interface IBaseRepository<T> where T : class, new()
 	{
 		List<T> GetList(int count);
 

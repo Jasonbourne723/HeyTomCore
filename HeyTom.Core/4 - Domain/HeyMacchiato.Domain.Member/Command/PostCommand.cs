@@ -1,4 +1,5 @@
-﻿using HeyMacchiato.Domain.Member.FluentValidation;
+﻿using HeyMacchiato.Domain.Core.Command;
+using HeyMacchiato.Domain.Member.FluentValidation;
 using HeyMacchiato.Infra.Util;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace HeyMacchiato.Domain.Member.Command
 {
-	public class PostCommand
+	public class PostCommand : ICommand
 	{
 		public int MemberId { get; set; }
 		/// <summary>

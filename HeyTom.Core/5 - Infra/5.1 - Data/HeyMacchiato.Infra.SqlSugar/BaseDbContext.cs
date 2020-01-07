@@ -2,6 +2,7 @@
 using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace HeyMacchiato.Infra.SqlSugar
@@ -22,6 +23,11 @@ namespace HeyMacchiato.Infra.SqlSugar
 			});
 		}
 
+		public virtual List<T> GetViewPage(Expression<Func<T, bool>> where ,int pageIndex,int pageSize,ref  int totalCount)
+		{
+			return CurrentDb.AsQueryable().Where(where).ToPageList(pageIndex, pageSize, ref totalCount);
+		}
+
 		/// <summary>
 		/// 获取所有
 		/// </summary>
@@ -30,14 +36,29 @@ namespace HeyMacchiato.Infra.SqlSugar
 		{
 			return CurrentDb.AsQueryable().Take(count)?.ToList();
 		}
+		/// <summary>
+		/// 通过主键获取实体
+		/// </summary>
+		/// <param name="id"></param>
+		/// <returns></returns>
 		public virtual T GetById(long id)
 		{
 			return CurrentDb.GetById(id);
 		}
+		/// <summary>
+		/// 插入
+		/// </summary>
+		/// <param name="entity"></param>
+		/// <returns></returns>
 		public virtual int Insert(T entity)
 		{
 			return CurrentDb.AsInsertable(entity).ExecuteCommandIdentityIntoEntity()? 1:0;
 		}
+		/// <summary>
+		/// 批量插入
+		/// </summary>
+		/// <param name="entities"></param>
+		/// <returns></returns>
 		public virtual int InsertBulk(List<T> entities)
 		{
 			return CurrentDb.InsertRange(entities)?1:0;
@@ -51,6 +72,11 @@ namespace HeyMacchiato.Infra.SqlSugar
 		{
 			return CurrentDb.Delete(id)?1:0;
 		}
+		/// <summary>
+		/// 批量删除
+		/// </summary>
+		/// <param name="ids"></param>
+		/// <returns></returns>
 		public virtual int Deletes(List<dynamic> ids)
 		{
 			return CurrentDb.DeleteByIds(ids.ToArray())?1:0;
@@ -64,17 +90,23 @@ namespace HeyMacchiato.Infra.SqlSugar
 		{
 			return CurrentDb.Update(entity)?1:0;
 		}
-
+		/// <summary>
+		/// 开启事务
+		/// </summary>
 		public void BeginTran()
 		{
 			Db.Ado.BeginTran();
 		}
-
+		/// <summary>
+		/// 提交事务
+		/// </summary>
 		public void CommitTran()
 		{
 			Db.Ado.CommitTran();
 		}
-
+		/// <summary>
+		/// 事务回滚
+		/// </summary>
 		public void RollBack()
 		{
 			Db.Ado.RollbackTran();

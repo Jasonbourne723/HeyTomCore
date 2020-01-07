@@ -1,4 +1,5 @@
-﻿using HeyMacchiato.Domain.Member.FluentValidation;
+﻿using HeyMacchiato.Domain.Core.Command;
+using HeyMacchiato.Domain.Member.FluentValidation;
 using HeyMacchiato.Infra.Util;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace HeyMacchiato.Domain.Member.Command
 	/// <summary>
 	/// 注册DTO
 	/// </summary>
-	public class RegisterCommand
+	public class RegisterCommand : ICommand
 	{
 		/// <summary>
 		/// 邮箱
