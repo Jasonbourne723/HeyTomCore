@@ -66,6 +66,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Application.QuartzTask", "3 - Application\HeyMacchiato.Application.QuartzTask\HeyMacchiato.Application.QuartzTask.csproj", "{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Service.QuartzTask", "2 - Service\HeyMacchiato.Service.Quartz.Apps\HeyMacchiato.Service.QuartzTask.csproj", "{1E13AD28-9D1F-4DCA-9670-44247DE72699}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -160,6 +164,14 @@ Global
 		{5ED86708-6417-452F-AF7C-EAF73512F4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ED86708-6417-452F-AF7C-EAF73512F4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ED86708-6417-452F-AF7C-EAF73512F4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +201,8 @@ Global
 		{D1E6EAD4-DD93-4681-A962-1350188861FF} = {64CA21DB-F8E7-48FF-859D-FFFEFDA0197E}
 		{FAE58924-9C01-46E0-B835-CF4F83120E1F} = {EF8AF2FD-8C8B-4763-B937-312B8C14D1E6}
 		{5ED86708-6417-452F-AF7C-EAF73512F4CC} = {1DD12EA8-4963-40B8-B45E-64730509DAC3}
+		{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35} = {AAFE38B7-C5FE-42D4-B1A0-54E1ECC4FF94}
+		{1E13AD28-9D1F-4DCA-9670-44247DE72699} = {1DD12EA8-4963-40B8-B45E-64730509DAC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF443A0E-D499-402E-8D9D-E20ECE0B088A}
