@@ -21,9 +21,9 @@ namespace HeyMachiato.Infra.Queue.RabbitMq
 		private static readonly ConcurrentDictionary<string, IModel> _dicChannel = new ConcurrentDictionary<string, IModel>();
 		private readonly IConfiguration _configuration;
 
-		public RabbitMqService(IConfiguration configuration)
+		public RabbitMqService()
 		{
-			_configuration = configuration;
+			_configuration = JsonConfigurationExtensions.AddJsonFile(new ConfigurationBuilder(), "appsettings.json").Build();
 			Open();
 		}
 		/// <summary>

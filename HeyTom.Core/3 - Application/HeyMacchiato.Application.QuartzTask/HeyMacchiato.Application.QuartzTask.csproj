@@ -8,4 +8,9 @@
     <PackageReference Include="Quartz" Version="3.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Queue\HeyMachiato.Infra.Queue.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Email\HeyMacchiato.Infra.Email.csproj" />
+  </ItemGroup>
+
 </Project>

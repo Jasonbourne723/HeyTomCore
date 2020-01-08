@@ -104,7 +104,7 @@ namespace HeyMacchiato.Application.Member.Implementation
 
 			var subject = "Hey Macchiato 注册验证码";
 			var content = $"您的验证码是{code.ToString()},有效期120秒!";
-			return EmailHelper.Send(toEmail, subject, content, "Hey Macchiato");
+			return EmailHelper.Send(toEmail, subject, content);
 		}
 
 		/// <summary>

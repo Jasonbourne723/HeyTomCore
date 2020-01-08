@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeyMacchiato.Application.QuartzTask
+namespace HeyMacchiato.Application.QuartzTask.Service
 {
-	public class SendEmailJob : IJob
+	public class TestJob : IJob
 	{
 		public Task Execute(IJobExecutionContext context)
 		{
-			throw new NotImplementedException();
+			Console.WriteLine(111);
+			return Task.CompletedTask;
 		}
 	}
 }

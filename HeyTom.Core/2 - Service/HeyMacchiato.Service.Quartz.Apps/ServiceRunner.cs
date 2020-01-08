@@ -6,6 +6,12 @@ namespace HeyMacchiato.Service.QuartzTask
 {
 	public  class ServiceRunner
 	{
+        private readonly QuartzService _quartzService;
+
+        public ServiceRunner(QuartzService quartzService)
+        {
+            this._quartzService = quartzService;
+        }
         public ServiceRunner()
         {
         }
@@ -15,6 +21,8 @@ namespace HeyMacchiato.Service.QuartzTask
         /// </summary>
         public void Start()
         {
+            _quartzService.Start();
+            _quartzService.StartConsume();
         }
 
         /// <summary>

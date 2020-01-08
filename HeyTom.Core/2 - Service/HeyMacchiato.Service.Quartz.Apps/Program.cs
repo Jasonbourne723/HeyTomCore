@@ -1,5 +1,12 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using HeyMacchiato.Application.QuartzTask.Service;
+using HeyMachiato.Infra.Queue.RabbitMq;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Quartz;
+using Quartz.Impl;
 using System;
+using System.Configuration;
+using System.IO;
 using Topshelf;
 
 namespace HeyMacchiato.Service.QuartzTask
@@ -8,7 +15,30 @@ namespace HeyMacchiato.Service.QuartzTask
 	{
 		static void Main(string[] args)
 		{
+           //var _schedulerService = new StdSchedulerFactory().GetScheduler().Result;//定义计划者
+           // // 定义作业并将其绑定到HelloJob类
+           // IJobDetail job = JobBuilder.Create<DailyTaskJob>()
+           //     .WithIdentity($"12fd3232", "dailyTaskJob")
+           //     .Build();
+           // // 触发作业运行
+           // ITrigger trigger = TriggerBuilder.Create()
+           //     .WithIdentity($"asffddsdf", "dailyTaskTrigger")
+           //     .StartNow()
+           //     //.StartAt(dailyTaskDTO.JobDate)
+           //     .Build();
+
+           // _schedulerService.ScheduleJob(job, trigger);
+
+           // _schedulerService.Start();
+
+           // Console.ReadKey();
+
+
             var services = new ServiceCollection();
+            services.AddSingleton<SchedulerService>();
+            services.AddScoped<DailyTaskJob>();
+            services.AddSingleton<IRabbitMqService, RabbitMqService>();
+            services.AddScoped<QuartzService>();
             services.AddScoped(typeof(ServiceRunner));
             var serviceProvider = services.BuildServiceProvider();
             HostFactory.Run(x => {
