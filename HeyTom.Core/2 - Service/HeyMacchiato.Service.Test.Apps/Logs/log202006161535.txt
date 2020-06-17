@@ -1,0 +1,50 @@
+2020-06-16 15:35:11.445 +08:00 [DBG] Hosting starting
+2020-06-16 15:35:11.854 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-16 15:35:11.885 +08:00 [DBG] Reading data from file 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys\key-e65ac7b5-88d2-48b8-a20b-3c704b0143bd.xml'.
+2020-06-16 15:35:12.011 +08:00 [DBG] Found key "e65ac7b5-88d2-48b8-a20b-3c704b0143bd".
+2020-06-16 15:35:12.044 +08:00 [DBG] Considering key "e65ac7b5-88d2-48b8-a20b-3c704b0143bd" with expiration date "2020-07-06T02:10:15.9732908+00:00" as default key.
+2020-06-16 15:35:12.065 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-06-16 15:35:12.071 +08:00 [DBG] Decrypting secret element using Windows DPAPI.
+2020-06-16 15:35:12.077 +08:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2020-06-16 15:35:12.085 +08:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2020-06-16 15:35:12.094 +08:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2020-06-16 15:35:12.103 +08:00 [DBG] Using key "e65ac7b5-88d2-48b8-a20b-3c704b0143bd" as the default key.
+2020-06-16 15:35:12.103 +08:00 [DBG] Key ring with default key "e65ac7b5-88d2-48b8-a20b-3c704b0143bd" was loaded during application startup.
+2020-06-16 15:35:12.899 +08:00 [DBG] Loaded hosting startup assembly HeyMacchiato.Service.Test.Apps
+2020-06-16 15:35:12.906 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-16 15:35:12.906 +08:00 [INF] Hosting environment: Development
+2020-06-16 15:35:12.906 +08:00 [INF] Content root path: F:\Mycode\heytomNew\HeyTom.Core\HeyTom.Core\2 - Service\HeyMacchiato.Service.Test.Apps
+2020-06-16 15:35:12.906 +08:00 [DBG] Hosting started
+2020-06-16 15:35:13.070 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:52062/weatherforecast  
+2020-06-16 15:35:13.077 +08:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2020-06-16 15:35:13.142 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-06-16 15:35:13.148 +08:00 [DBG] Endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-06-16 15:35:13.149 +08:00 [DBG] Request matched endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:35:13.589 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-06-16 15:35:13.593 +08:00 [INF] Executing endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:35:13.614 +08:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2020-06-16 15:35:13.989 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.String Get() on controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps).
+2020-06-16 15:35:13.991 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-06-16 15:35:13.992 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-06-16 15:35:13.993 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-06-16 15:35:13.993 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-06-16 15:35:13.993 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-06-16 15:35:13.994 +08:00 [DBG] Executing controller factory for controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps)
+2020-06-16 15:35:13.999 +08:00 [DBG] Executed controller factory for controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps)
+2020-06-16 15:35:14.212 +08:00 [INF] Executing action method HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps) - Validation state: "Valid"
+2020-06-16 15:35:14.215 +08:00 [INF] 2020/6/16 15:35:14 hello serilog
+2020-06-16 15:35:14.224 +08:00 [INF] Executed action method HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 3.1379ms.
+2020-06-16 15:35:14.229 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-06-16 15:35:14.233 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-06-16 15:35:14.233 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-06-16 15:35:14.233 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-06-16 15:35:14.234 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-06-16 15:35:14.234 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-06-16 15:35:14.300 +08:00 [INF] Executed action HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps) in 292.312ms
+2020-06-16 15:35:14.301 +08:00 [INF] Executed endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:35:14.313 +08:00 [INF] Request finished in 1255.2036ms 200 text/plain; charset=utf-8
+2020-06-16 15:35:14.758 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:52062/favicon.ico  
+2020-06-16 15:35:14.760 +08:00 [DBG] No candidates found for the request path '/favicon.ico'
+2020-06-16 15:35:14.760 +08:00 [DBG] Request did not match any endpoints
+2020-06-16 15:35:14.764 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-06-16 15:35:14.770 +08:00 [INF] Request finished in 12.7979ms 404 

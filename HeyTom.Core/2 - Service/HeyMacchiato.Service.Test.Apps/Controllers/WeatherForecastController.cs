@@ -6,6 +6,7 @@ using HeyMacchiato.Domain.Member.Repository;
 using HeyMacchiato.Infra.Data.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace HeyMacchiato.Service.Test.Apps.Controllers
 {
@@ -13,32 +14,54 @@ namespace HeyMacchiato.Service.Test.Apps.Controllers
 	[Route("[controller]")]
 	public class WeatherForecastController : ControllerBase
 	{
-		private static readonly string[] Summaries = new[]
-		{
-			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-		};
-
 		private readonly ILogger<WeatherForecastController> _logger;
 
-		public WeatherForecastController(ILogger<WeatherForecastController> logger)
+		public WeatherForecastController(ILogger<WeatherForecastController> logger )
 		{
 			_logger = logger;
 		}
 
 		[HttpGet]
-		public IEnumerable<WeatherForecast> Get()
+		public string Get()
 		{
-			var rng = new Random();
-			IMemberRepository memberRepository = new MemberRepository();
-			var aa = memberRepository.GetList(10);
-			_logger.Log(LogLevel.Information, "aa");
-			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+			var aa = "";
+			try
 			{
-				Date = DateTime.Now.AddDays(index),
-				TemperatureC = rng.Next(-20, 55),
-				Summary = Summaries[rng.Next(Summaries.Length)]
-			})
-			.ToArray();
+				aa += "1";
+				
+				
+				try
+				{
+					throw new Exception("lli");
+				}
+				catch (Exception ex)
+				{
+
+					throw;
+				}
+				finally
+				{
+					aa += "2";
+				}
+			}
+			catch (Exception)
+			{
+				aa += "3";
+			}
+			finally {
+				aa += "4";
+			}
+			_logger.LogInformation($"{DateTime.Now} hello serilog");
+			_logger.LogError($"Error  serilog  {DateTime.Now}");
+			Test();
+			return aa;
+		}
+
+		private void Test()
+		{
+			var itemNumber = new { name = "sunzi", age = 3 };
+			var itemCount = 999;
+			Log.Information("Processing item {ItemNumber} of {ItemCount}", itemNumber, itemCount);
 		}
 	}
 }

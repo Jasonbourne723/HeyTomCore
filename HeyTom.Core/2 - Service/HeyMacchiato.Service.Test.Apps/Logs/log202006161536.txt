@@ -1,0 +1,26 @@
+2020-06-16 15:36:28.949 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:52062/weatherforecast  
+2020-06-16 15:36:28.958 +08:00 [DBG] 1 candidate(s) found for the request path '/weatherforecast'
+2020-06-16 15:36:28.958 +08:00 [DBG] Endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)' with route pattern 'WeatherForecast' is valid for the request path '/weatherforecast'
+2020-06-16 15:36:28.958 +08:00 [DBG] Request matched endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:36:28.964 +08:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2020-06-16 15:36:28.965 +08:00 [INF] Executing endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:36:28.967 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.String Get() on controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps).
+2020-06-16 15:36:28.967 +08:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2020-06-16 15:36:28.967 +08:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2020-06-16 15:36:28.967 +08:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2020-06-16 15:36:28.967 +08:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2020-06-16 15:36:28.967 +08:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2020-06-16 15:36:28.967 +08:00 [DBG] Executing controller factory for controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps)
+2020-06-16 15:36:28.968 +08:00 [DBG] Executed controller factory for controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps)
+2020-06-16 15:36:29.041 +08:00 [INF] Executing action method HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps) - Validation state: "Valid"
+2020-06-16 15:36:29.041 +08:00 [INF] 2020/6/16 15:36:29 hello serilog
+2020-06-16 15:36:29.041 +08:00 [INF] Executed action method HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 0.1916ms.
+2020-06-16 15:36:29.042 +08:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2020-06-16 15:36:29.042 +08:00 [DBG] No information found on request to perform content negotiation.
+2020-06-16 15:36:29.042 +08:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2020-06-16 15:36:29.042 +08:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2020-06-16 15:36:29.042 +08:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2020-06-16 15:36:29.042 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-06-16 15:36:29.044 +08:00 [INF] Executed action HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps) in 76.6538ms
+2020-06-16 15:36:29.044 +08:00 [INF] Executed endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:36:29.045 +08:00 [INF] Request finished in 101.1987ms 200 text/plain; charset=utf-8

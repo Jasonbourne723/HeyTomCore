@@ -1,0 +1,14 @@
+2020-06-16 15:37:28.616 +08:00 [INF] User profile is available. Using 'C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2020-06-16 15:37:29.175 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2020-06-16 15:37:29.175 +08:00 [INF] Hosting environment: Development
+2020-06-16 15:37:29.175 +08:00 [INF] Content root path: F:\Mycode\heytomNew\HeyTom.Core\HeyTom.Core\2 - Service\HeyMacchiato.Service.Test.Apps
+2020-06-16 15:37:29.370 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:52062/weatherforecast  
+2020-06-16 15:37:29.566 +08:00 [INF] Executing endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:37:29.771 +08:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.String Get() on controller HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController (HeyMacchiato.Service.Test.Apps).
+2020-06-16 15:37:30.079 +08:00 [INF] Executing action method HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps) - Validation state: "Valid"
+2020-06-16 15:37:30.089 +08:00 [INF] 2020/6/16 15:37:30 hello serilog
+2020-06-16 15:37:30.100 +08:00 [INF] Executed action method HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 6.2259ms.
+2020-06-16 15:37:30.117 +08:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2020-06-16 15:37:30.278 +08:00 [INF] Executed action HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps) in 488.4377ms
+2020-06-16 15:37:30.279 +08:00 [INF] Executed endpoint 'HeyMacchiato.Service.Test.Apps.Controllers.WeatherForecastController.Get (HeyMacchiato.Service.Test.Apps)'
+2020-06-16 15:37:30.289 +08:00 [INF] Request finished in 922.7274ms 200 text/plain; charset=utf-8
