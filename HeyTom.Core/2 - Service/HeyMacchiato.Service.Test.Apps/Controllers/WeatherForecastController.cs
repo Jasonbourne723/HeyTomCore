@@ -10,58 +10,59 @@ using Serilog;
 
 namespace HeyMacchiato.Service.Test.Apps.Controllers
 {
-	[ApiController]
-	[Route("[controller]")]
-	public class WeatherForecastController : ControllerBase
-	{
-		private readonly ILogger<WeatherForecastController> _logger;
+    [ApiController]
+    [Route("[controller]")]
+    public class WeatherForecastController : ControllerBase
+    {
+        private readonly ILogger<WeatherForecastController> _logger;
 
-		public WeatherForecastController(ILogger<WeatherForecastController> logger )
-		{
-			_logger = logger;
-		}
+        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        {
+            _logger = logger;
+        }
 
-		[HttpGet]
-		public string Get()
-		{
-			var aa = "";
-			try
-			{
-				aa += "1";
-				
-				
-				try
-				{
-					throw new Exception("lli");
-				}
-				catch (Exception ex)
-				{
+        [HttpGet]
+        public string Get()
+        {
+            var aa = "";
+            try
+            {
+                aa += "1";
 
-					throw;
-				}
-				finally
-				{
-					aa += "2";
-				}
-			}
-			catch (Exception)
-			{
-				aa += "3";
-			}
-			finally {
-				aa += "4";
-			}
-			_logger.LogInformation($"{DateTime.Now} hello serilog");
-			_logger.LogError($"Error  serilog  {DateTime.Now}");
-			Test();
-			return aa;
-		}
 
-		private void Test()
-		{
-			var itemNumber = new { name = "sunzi", age = 3 };
-			var itemCount = 999;
-			Log.Information("Processing item {ItemNumber} of {ItemCount}", itemNumber, itemCount);
-		}
-	}
+                try
+                {
+                    throw new Exception("lli");
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+                }
+                finally
+                {
+                    aa += "2";
+                }
+            }
+            catch (Exception)
+            {
+                aa += "3";
+            }
+            finally
+            {
+                aa += "4";
+            }
+            _logger.LogInformation($"{DateTime.Now} hello serilog");
+            _logger.LogError($"Error  serilog  {DateTime.Now}");
+            Test();
+            return aa;
+        }
+
+        private void Test()
+        {
+            var itemNumber = new { name = "sunzi", age = 3 };
+            var itemCount = 999;
+            Log.Information("Processing item {ItemNumber} of {ItemCount}", itemNumber, itemCount);
+        }
+    }
 }

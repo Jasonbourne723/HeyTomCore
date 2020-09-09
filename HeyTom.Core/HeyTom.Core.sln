@@ -66,9 +66,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Application.QuartzTask", "3 - Application\HeyMacchiato.Application.QuartzTask\HeyMacchiato.Application.QuartzTask.csproj", "{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Application.QuartzTask", "3 - Application\HeyMacchiato.Application.QuartzTask\HeyMacchiato.Application.QuartzTask.csproj", "{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeyMacchiato.Service.QuartzTask", "2 - Service\HeyMacchiato.Service.Quartz.Apps\HeyMacchiato.Service.QuartzTask.csproj", "{1E13AD28-9D1F-4DCA-9670-44247DE72699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Infra.Aop", "5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Aop\HeyMacchiato.Infra.Aop.csproj", "{F400978F-2FF5-44CC-8E1E-6D8364103327}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Test", "6 - Test", "{A818FE26-4001-429D-AC66-39C60C3F5204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeyMacchiato.Aop.Test", "6 - Test\HeyMacchiato.Aop.Test\HeyMacchiato.Aop.Test.csproj", "{AD220E48-18A0-4297-BC31-5C0998087DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -172,6 +178,14 @@ Global
 		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E13AD28-9D1F-4DCA-9670-44247DE72699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F400978F-2FF5-44CC-8E1E-6D8364103327}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F400978F-2FF5-44CC-8E1E-6D8364103327}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F400978F-2FF5-44CC-8E1E-6D8364103327}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F400978F-2FF5-44CC-8E1E-6D8364103327}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD220E48-18A0-4297-BC31-5C0998087DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD220E48-18A0-4297-BC31-5C0998087DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD220E48-18A0-4297-BC31-5C0998087DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD220E48-18A0-4297-BC31-5C0998087DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -203,6 +217,8 @@ Global
 		{5ED86708-6417-452F-AF7C-EAF73512F4CC} = {1DD12EA8-4963-40B8-B45E-64730509DAC3}
 		{61B9E0B4-BEE1-40B5-AA79-646DCB2B9F35} = {AAFE38B7-C5FE-42D4-B1A0-54E1ECC4FF94}
 		{1E13AD28-9D1F-4DCA-9670-44247DE72699} = {1DD12EA8-4963-40B8-B45E-64730509DAC3}
+		{F400978F-2FF5-44CC-8E1E-6D8364103327} = {EF8AF2FD-8C8B-4763-B937-312B8C14D1E6}
+		{AD220E48-18A0-4297-BC31-5C0998087DF3} = {A818FE26-4001-429D-AC66-39C60C3F5204}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF443A0E-D499-402E-8D9D-E20ECE0B088A}
