@@ -49,11 +49,14 @@ namespace HeyMacchiato.Infra.Data.Repository
 		public ResultModel BeginTransaction(Action action)
 		{
 			var result = new ResultModel(1);
-			try {
+			try
+			{
 				_db.Db.BeginTran();
 				action();
 				_db.Db.CommitTran();
-			} catch (Exception ex) {
+			}
+			catch (Exception ex)
+			{
 				_db.Db.RollbackTran();
 				result.ResultNo = -1;
 				result.Message = ex.Message;
