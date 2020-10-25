@@ -6,11 +6,11 @@ using System.Text;
 
 namespace HeyMacchiato.Infra.Data.Repository
 {
-	public class PostRepository : BaseRepository<Post>, IPostRepository
+    public class PostRepository : BaseRepository<Post>, IPostRepository
 	{
 		public PostRepository()
 		{
-			_db = new PostContext();
+			_db = new PostContext("");
 		}
 
 		public List<Post> GetByMemberId(int memberId)

@@ -18,4 +18,14 @@ namespace HeyMacchiato.Infra.Util
 		public T TModel { get; set; }
 
 	}
+
+	public class PageResultModel<T> : ResultModel
+	{
+
+        public List<T> TModel { get; set; }
+
+        public int RecordCount { get; set; }
+
+        public int PageCount { get; set; }
+    }
 }

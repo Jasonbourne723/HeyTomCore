@@ -21,6 +21,10 @@ namespace HeyMacchiato.Domain.Core.IRepository
 
 		ResultModel Deletes(List<long> Ids);
 
+
+
 		ResultModel BeginTransaction(Action action);
+
+		PageResultModel<T1> GetPageResult<T1>(ListParam listParam) where T1 : class, new();
 	}
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeyMacchiato.Service.MyBlog.Apps</name>
+    </assembly>
+    <members>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.List(HeyMacchiato.Infra.Util.ViewParam)">
+            <summary>
+            获取博客列表
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.GetOne(HeyMacchiato.Service.MyBlog.Apps.Models.IdVModel)">
+            <summary>
+            查询单个文章
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

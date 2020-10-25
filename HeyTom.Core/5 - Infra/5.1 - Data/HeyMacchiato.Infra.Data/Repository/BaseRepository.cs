@@ -63,5 +63,10 @@ namespace HeyMacchiato.Infra.Data.Repository
 			}
 			return result;
 		}
-	}
+
+        public PageResultModel<T1> GetPageResult<T1>(ListParam listParam) where T1 : class, new()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

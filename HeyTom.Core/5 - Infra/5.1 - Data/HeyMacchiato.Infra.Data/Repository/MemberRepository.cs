@@ -11,7 +11,7 @@ namespace HeyMacchiato.Infra.Data.Repository
 
 		public MemberRepository()
 		{
-			_db = new MemberContext();
+			_db = new MemberContext("");
 		}
 
 		public Member GetByEmail(string email)

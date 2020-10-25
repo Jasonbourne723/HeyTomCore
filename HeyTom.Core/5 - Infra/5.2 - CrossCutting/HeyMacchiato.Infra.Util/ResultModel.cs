@@ -2,7 +2,7 @@
 
 namespace HeyMacchiato.Infra.Util
 {
-	public class ResultModel
+    public class ResultModel
 	{
 		public ResultModel(int resultNo, string message)
 		{

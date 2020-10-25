@@ -5,8 +5,10 @@ using System;
 
 namespace HeyMacchiato.Infra.Data
 {
-	public class MemberContext : BaseDbContext<Member>
-	{
-
-	}
+    public class MemberContext : BaseDbContext<Member>
+    {
+        public MemberContext(string db) : base(db)
+        {
+        }
+    }
 }

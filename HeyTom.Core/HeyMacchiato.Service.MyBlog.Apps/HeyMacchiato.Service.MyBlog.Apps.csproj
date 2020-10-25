@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>HeyMacchiato.Service.MyBlog.Apps.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.DependencyInjection\HeyMacchiato.Infra.DependencyInjection.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj" />
+    <ProjectReference Include="..\HeyTom.MyBlog.Model\HeyTom.MyBlog.Model.csproj" />
+    <ProjectReference Include="..\HeyTom.MyBlog.Respository\HeyTom.MyBlog.Respository.csproj">
+      <Private>true</Private>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HeyMacchiato.Service.MyBlog.Apps.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

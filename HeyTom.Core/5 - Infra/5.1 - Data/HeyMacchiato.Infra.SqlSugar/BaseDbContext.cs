@@ -1,7 +1,9 @@
 ﻿using HeyMacchiato.Domain.Core.Models;
+using Microsoft.Extensions.Configuration;
 using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
@@ -11,11 +13,13 @@ namespace HeyMacchiato.Infra.SqlSugar
 	{
 		public SqlSugarClient Db;//用来处理事务多表查询和复杂的操作
 		public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }//用来处理T表的常用操作
-		public BaseDbContext()
+		
+		public BaseDbContext(string db)
 		{
+			var configuration = JsonConfigurationExtensions.AddJsonFile(new ConfigurationBuilder(), "appsettings.json").Build();
 			Db = new SqlSugarClient(new ConnectionConfig()
 			{
-				ConnectionString = "Server=gz-cynosdbmysql-grp-lej3steh.sql.tencentcdb.com;Port=22877;Database=HeyMacchiato;Uid=root;Pwd=Gaohan521;SslMode=none;",
+				ConnectionString = configuration[db],
 				DbType = DbType.MySql,
 				InitKeyType = InitKeyType.SystemTable,//从特性读取主键和自增列信息
 				IsAutoCloseConnection = true,//开启自动释放模式和EF原理一样我就不多解释了
