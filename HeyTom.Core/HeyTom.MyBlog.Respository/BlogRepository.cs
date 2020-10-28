@@ -20,6 +20,6 @@ namespace HeyTom.MyBlog.Respository
 
     public interface IBlogRepository : IBaseRepository<Blog>
     {
-       // PageResultModel<Blog> GetPageResult(ListParam listParam);
+
     }
 }

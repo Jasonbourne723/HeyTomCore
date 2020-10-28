@@ -74,7 +74,7 @@ namespace HeyMacchiato.Infra.SqlSugar
 		/// <returns></returns>
 		public virtual int Delete(dynamic id)
 		{
-			return CurrentDb.Delete(id)?1:0;
+			return CurrentDb.DeleteById(id)?1:0;
 		}
 		/// <summary>
 		/// 批量删除

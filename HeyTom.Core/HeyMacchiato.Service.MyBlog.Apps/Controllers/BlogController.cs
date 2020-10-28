@@ -18,21 +18,30 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
 
         private readonly ILogger<BlogController> _logger;
         private readonly IBlogRepository _blogRepository;
-
+        private readonly ICategoryRepository _categoryRepository;
+        private readonly IAuthorRepository _authorRepository;
         private Dictionary<string, string> dicBlog = new Dictionary<string, string>() {
-            { "blogId","Id"},
+            { "id","Id"},
             { "name","Name"},
             { "content","Content"},
             { "status","Status"},
-        };
+            {"createDate","CreateDate"},
+            {"categoryId","CategoryId"},
+            { "authorId","AuthorId"},
+            { "isDel","IsDel"}
+    };
 
 
         public BlogController(ILogger<BlogController> logger,
-                            IBlogRepository blogRepository
+                            IBlogRepository blogRepository,
+                            ICategoryRepository categoryRepository,
+                            IAuthorRepository authorRepository
             )
         {
             _logger = logger;
             _blogRepository = blogRepository;
+            _categoryRepository = categoryRepository;
+            _authorRepository = authorRepository;
         }
 
         /// <summary>
@@ -42,7 +51,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("[action]")]
-        [ProducesDefaultResponseType(typeof(PageResultModel<Blog>))]
+        [ProducesDefaultResponseType(typeof(PageResultModel<BlogVModel>))]
 
         public IActionResult List([FromBody] ViewParam param)
         {
@@ -50,11 +59,16 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
             return this.Wrapper(ref result, () =>
             {
                 var listparam = ConvertRequest.Convert(param, dicBlog);
-                result = _blogRepository.GetPageResult<BlogVModel>(listparam);
+                var r = _blogRepository.GetPageResult<BlogVModel>(listparam);
+                var categroys = _categoryRepository.GetInUse();
+                var author = _authorRepository.GetById(1);
+                r.TModel?.ForEach(ea =>
+                {
+                    ea.categoryName = categroys?.FirstOrDefault(x => x.Id == ea.categoryId)?.Name;
+                    ea.authorName = author?.Name;
+                });
+                result = r;
             }, false);
-           // return  _blogRepository.GetPageResult(null, param.PageIndex, param.PageSize);
-
-
         }
 
         /// <summary>
@@ -64,28 +78,61 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("[action]")]
-        [ProducesDefaultResponseType(typeof(TResultModel<Blog>))]
-        public TResultModel<Blog> GetOne([FromBody] IdVModel param)
+        [ProducesDefaultResponseType(typeof(TResultModel<BlogVModel>))]
+        public IActionResult GetOne([FromBody] IdVModel param)
         {
-            var blog = _blogRepository.GetById(param.Id);
-            if (blog == null)
+            var result = new TResultModel<BlogVModel>(1);
+            return this.Wrapper(ref result, () =>
             {
-                return new TResultModel<Blog>(-1,"未找到该文章");
-            }
-            return new TResultModel<Blog>(1) {
-                TModel = blog
-            };
+                var blog = _blogRepository.GetById(param.Id);
+                if (blog == null)
+                {
+                    result = new TResultModel<BlogVModel>(-1, "未找到该文章");
+                    return;
+                }
+                var category = _categoryRepository.GetById(blog.CategoryId);
+                var author = _authorRepository.GetById(blog.AuthorId);
+                result.TModel = new BlogVModel()
+                {
+                    id = blog.Id,
+                    authorId = blog.AuthorId,
+                    status = blog.Status,
+                    categoryId = blog.CategoryId,
+                    content = blog.Content,
+                    isDel = blog.IsDel,
+                    name = blog.Name,
+                    createDate = blog.CreateDate,
+                    categoryName = category?.Name,
+                    authorName = author?.Name
+                };
+            }, true);
+
+
+        }
+
+        /// <summary>
+        /// 新增文章
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("[action]")]
+        [ProducesDefaultResponseType(typeof(ResultModel))]
+        public IActionResult Add([FromBody] AddBlogVModel param)
+        {
+            var result = new ResultModel();
+            return this.Wrapper(ref result,()=> {
+                _blogRepository.Add(new Blog() { 
+                    AuthorId = 1,
+                    CategoryId = 1,
+                    Content = param.content,
+                    CreateDate = DateTime.Now,
+                    IsDel = 0,
+                    Name = param.name,
+                    Status = 1
+                });
+            },true);
         }
     }
 
-    public class BlogVModel
-    {
-        public int blogId { get; set; }
 
-        public string name { get; set; }
-
-        public string content { get; set; }
-
-        public short status { get; set; }
-    }
 }

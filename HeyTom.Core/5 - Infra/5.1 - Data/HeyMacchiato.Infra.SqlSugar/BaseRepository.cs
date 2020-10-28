@@ -13,6 +13,100 @@ namespace HeyMacchiato.Infra.SqlSugar
     {
         protected BaseDbContext<T> _db;
 
+        #region 私有方法
+
+        private static string GetSort(ListParam listParam, ref string select)
+        {
+            var sort = "null";
+            if (listParam.Sort != null && listParam.Sort.Count > 0)
+            {
+                sort = "";
+                for (int i = 0; i < listParam.Sort.Count; i++)
+                {
+                    sort += $"{listParam.Sort[i].DbField} {listParam.Sort[i].Value}";
+                    if (i != listParam.Sort.Count - 1)
+                    {
+                        select += ",";
+                    }
+                }
+            }
+
+            return sort;
+        }
+
+        private static string GetSelect(ListParam listParam)
+        {
+            var select = " * ";
+            if (listParam.Select != null && listParam.Select.Count > 0)
+            {
+                select = "";
+                for (int i = 0; i < listParam.Select.Count; i++)
+                {
+                    select += $" {listParam.Select[i].Key} as {listParam.Select[i].Value} ";
+                    if (i != listParam.Select.Count - 1)
+                    {
+                        select += ",";
+                    }
+                }
+            }
+
+            return select;
+        }
+
+        private List<IConditionalModel> GetWhere(ListParam listParam)
+        {
+            var where = new List<IConditionalModel>();
+            listParam.Filter?.ForEach(ea =>
+            {
+                where.Add(new ConditionalModel()
+                {
+                    FieldName = ea.DbField,
+                    FieldValue = ea.Value,
+                    ConditionalType = ToConditionalType(ea.Operator)
+
+                });
+            });
+            return where;
+        }
+
+        private ConditionalType ToConditionalType(string operatorStr)
+        {
+            operatorStr = operatorStr.Trim();
+            var conditionalType = ConditionalType.Equal;
+            switch (operatorStr)
+            {
+                case "=":
+                    conditionalType = ConditionalType.Equal;
+                    break;
+                case ">":
+                    conditionalType = ConditionalType.GreaterThan;
+                    break;
+                case ">=":
+                    conditionalType = ConditionalType.GreaterThanOrEqual;
+                    break;
+                case "in":
+                    conditionalType = ConditionalType.In;
+                    break;
+                case "<":
+                    conditionalType = ConditionalType.LessThan;
+                    break;
+                case "<=":
+                    conditionalType = ConditionalType.LessThanOrEqual;
+                    break;
+                case "like":
+                    conditionalType = ConditionalType.Like;
+                    break;
+                case "!=":
+                    conditionalType = ConditionalType.NoEqual;
+                    break;
+                default:
+                    break;
+            }
+            return conditionalType;
+        }
+
+        #endregion 私有方法
+
         public ResultModel Delete(long id)
         {
             return new ResultModel(_db.Delete(id));
@@ -69,83 +163,15 @@ namespace HeyMacchiato.Infra.SqlSugar
         public PageResultModel<T1> GetPageResult<T1>(ListParam listParam) where T1 : class, new()
         {
             int totalCount = 0;
-
-            var where = new List<IConditionalModel>();
-            listParam.Filter?.ForEach(ea=> {
-                where.Add(new ConditionalModel() { 
-                    FieldName = ea.DbField,
-                    FieldValue = ea.Value,
-                    ConditionalType = ToConditionalType(ea.Operator)
-
-                });
-            });
-            var select = " * ";
-            if (listParam.Select != null && listParam.Select.Count > 0)
-            {
-                select = "";
-                for (int i = 0; i < listParam.Select.Count; i++)
-                {
-                    select += $" {listParam.Select[i].Key} as {listParam.Select[i].Value} ";
-                    if (i != listParam.Select.Count - 1)
-                    {
-                        select += ",";
-                    }
-                }
-            }
-            var sort = "null";
-            if (listParam.Sort != null && listParam.Sort.Count > 0)
-            {
-                sort = "";
-                for (int i = 0; i < listParam.Sort.Count; i++)
-                {
-                    sort += $"{listParam.Sort[i].DbField} {listParam.Sort[i].Value}";
-                    if (i != listParam.Sort.Count - 1)
-                    {
-                        select += ",";
-                    }
-                }
-            }
+            List<IConditionalModel> where = GetWhere(listParam);
+            string select = GetSelect(listParam);
+            string sort = GetSort(listParam, ref select);
             var result = new PageResultModel<T1>();
-            result.TModel  = _db.CurrentDb.AsQueryable().Where(where).OrderBy(sort).Select<T1>(select).ToPageList(listParam.PageIndex, listParam.PageSize, ref totalCount);
+            result.TModel = _db.CurrentDb.AsQueryable().Where(where).OrderBy(sort).Select<T1>(select).ToPageList(listParam.PageIndex, listParam.PageSize, ref totalCount);
             result.RecordCount = totalCount;
             result.PageCount = (int)Math.Ceiling(((decimal)totalCount / listParam.PageSize));
             return result;
         }
 
-        public ConditionalType ToConditionalType(string operatorStr)
-        {
-            operatorStr = operatorStr.Trim();
-            var conditionalType = ConditionalType.Equal;
-            switch (operatorStr)
-            {
-                case "=":
-                    conditionalType = ConditionalType.Equal;
-                    break;
-                case ">":
-                    conditionalType = ConditionalType.GreaterThan;
-                    break;
-                case ">=":
-                    conditionalType = ConditionalType.GreaterThanOrEqual;
-                    break;
-                case "in":
-                    conditionalType = ConditionalType.In;
-                    break;
-                case "<":
-                    conditionalType = ConditionalType.LessThan;
-                    break;
-                case "<=":
-                    conditionalType = ConditionalType.LessThanOrEqual;
-                    break;
-                case "like":
-                    conditionalType = ConditionalType.Like;
-                    break;
-                case "!=":
-                    conditionalType = ConditionalType.NoEqual;
-                    break;
-                default:
-                    break;
-            }
-            return conditionalType;
-        }
     }
 }

@@ -4,6 +4,13 @@
         <name>HeyMacchiato.Service.MyBlog.Apps</name>
     </assembly>
     <members>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.AuthorController.GetOne(HeyMacchiato.Service.MyBlog.Apps.Models.IdVModel)">
+            <summary>
+            获取作者
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
         <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.List(HeyMacchiato.Infra.Util.ViewParam)">
             <summary>
             获取博客列表
@@ -14,6 +21,33 @@
         <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.GetOne(HeyMacchiato.Service.MyBlog.Apps.Models.IdVModel)">
             <summary>
             查询单个文章
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.CategoryController.GetAll">
+            <summary>
+            获取所有分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.CategoryController.Add(HeyMacchiato.Service.MyBlog.Apps.Models.AddCategoryVModel)">
+            <summary>
+            新增分类
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.CategoryController.Remove(HeyMacchiato.Service.MyBlog.Apps.Models.IdVModel)">
+            <summary>
+            删除分类
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.CategoryController.Update(HeyMacchiato.Service.MyBlog.Apps.Models.UpdateCategoryVModel)">
+            <summary>
+            更新分类
             </summary>
             <param name="param"></param>
             <returns></returns>
