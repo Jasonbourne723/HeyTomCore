@@ -13,15 +13,16 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Scrutor" Version="3.1.0" />
     <PackageReference Include="Serilog" Version="2.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.DependencyInjection\HeyMacchiato.Infra.DependencyInjection.csproj" />
     <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Email\HeyMacchiato.Infra.Email.csproj" />
     <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Encryption\HeyMacchiato.Infra.Encryption.csproj" />
     <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Jwt\HeyMacchiato.Infra.Jwt.csproj" />
     <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj" />
+    <ProjectReference Include="..\..\HeyTom.Manage.Repository\HeyTom.Manage.Repository.csproj" />
   </ItemGroup>
 
   <ItemGroup>

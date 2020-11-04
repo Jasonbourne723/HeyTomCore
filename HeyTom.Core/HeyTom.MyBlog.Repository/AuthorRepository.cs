@@ -5,7 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace HeyTom.MyBlog.Respository
+namespace HeyTom.MyBlog.Repository
 {
     public class AuthorRepository : BaseRepository<Author>, IAuthorRepository
     {

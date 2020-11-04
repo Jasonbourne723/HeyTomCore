@@ -9,14 +9,15 @@
             登录控制器
             </summary>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.#ctor(HeyMacchiato.Application.Member.Interface.IMemberApplication)">
-            <summary>
-            构造函数
-            </summary>
-        </member>
         <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.Get(System.String,System.String)">
             <summary>
             邮箱登录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.LoginController.GetUserInfo">
+            <summary>
+            获取用户信息
             </summary>
             <returns></returns>
         </member>
@@ -31,24 +32,59 @@
             注册控制器
             </summary>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.#ctor(HeyMacchiato.Application.Member.Interface.IMemberApplication)">
-            <summary>
-            构造函数
-            </summary>
-        </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.Post(HeyMacchiato.Application.Member.DTO.RegisterDTO)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.Post(HeyMacchiato.Service.OAuth.Apps.Models.RegisterVModel)">
             <summary>
             邮箱注册
             </summary>
             <param name="registerViewModel"></param>
             <returns></returns>
         </member>
-        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.VerificationCode(HeyMacchiato.Application.Member.DTO.EmailDTO)">
+        <member name="M:HeyMacchiato.Service.OAuth.Apps.Controllers.RegisterController.VerificationCode(HeyMacchiato.Service.OAuth.Apps.Models.EmailVModel)">
             <summary>
             发送注册验证码
             </summary>
-            <param name="emailDTO"></param>
+            <param name="model"></param>
             <returns></returns>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.TokenVModel.token">
+            <summary>
+            token
+            </summary>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.RegisterVModel.email">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.RegisterVModel.password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.RegisterVModel.nickName">
+            <summary>
+            昵称
+            </summary>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.RegisterVModel.verificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="T:HeyMacchiato.Service.OAuth.Apps.Models.VerificationCodeVModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.VerificationCodeVModel.verificationCode">
+            <summary>
+            验证码
+            </summary>
+        </member>
+        <member name="P:HeyMacchiato.Service.OAuth.Apps.Models.EmailVModel.email">
+            <summary>
+            邮箱
+            </summary>
         </member>
         <member name="T:HeyMacchiato.Service.OAuth.Apps.Program">
             <summary>

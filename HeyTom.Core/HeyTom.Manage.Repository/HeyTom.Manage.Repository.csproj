@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\4 - Domain\HeyMacchiato.Domain.Core\HeyMacchiato.Domain.Core.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.SqlSugar\HeyMacchiato.Infra.SqlSugar.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Util\HeyMacchiato.Infra.Util.csproj" />
+    <ProjectReference Include="..\HeyTom.Manage.Model\HeyTom.Manage.Model.csproj" />
+  </ItemGroup>
+
+</Project>

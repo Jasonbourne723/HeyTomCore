@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>HeyMacchiato.Service.Manage.Apps.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
+    <PackageReference Include="Scrutor" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Jwt\HeyMacchiato.Infra.Jwt.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Util\HeyMacchiato.Infra.Util.csproj" />
+    <ProjectReference Include="..\HeyTom.Manage.Model\HeyTom.Manage.Model.csproj" />
+    <ProjectReference Include="..\HeyTom.Manage.Repository\HeyTom.Manage.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HeyMacchiato.Service.Manage.Apps.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

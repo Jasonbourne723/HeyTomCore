@@ -10,11 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Scrutor" Version="3.1.0" />
+	  <PackageReference Include="System.Runtime.Loader" Version="4.3.0" />
+	  <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+	  <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+	  <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj" />
-    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.DependencyInjection\HeyMacchiato.Infra.DependencyInjection.csproj" />
     <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj" />
     <ProjectReference Include="..\HeyTom.MyBlog.Model\HeyTom.MyBlog.Model.csproj" />
-    <ProjectReference Include="..\HeyTom.MyBlog.Respository\HeyTom.MyBlog.Respository.csproj">
+    <ProjectReference Include="..\HeyTom.MyBlog.Repository\HeyTom.MyBlog.Repository.csproj">
       <Private>true</Private>
     </ProjectReference>
   </ItemGroup>

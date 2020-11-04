@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using HeyMacchiato.Infra.MvcCore;
 using HeyMacchiato.Infra.Util;
 using HeyMacchiato.Service.MyBlog.Apps.Models;
-using HeyTom.MyBlog.Respository;
+using HeyTom.MyBlog.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

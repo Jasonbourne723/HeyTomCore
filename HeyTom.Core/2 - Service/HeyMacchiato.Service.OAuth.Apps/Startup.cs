@@ -10,12 +10,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using HeyMacchiato.Infra.MvcCore;
-using HeyMacchiato.Infra.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using HeyMacchiato.Infra.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Runtime.Loader;
+using System.Reflection;
 
 namespace HeyMacchiato.Service.OAuth.Apps
 {
@@ -54,14 +56,14 @@ namespace HeyMacchiato.Service.OAuth.Apps
 				ValidateAudience = true,
 				ValidAudience = "HeyMacchiato",//订阅人
 				ValidateLifetime = true,
-				ClockSkew = TimeSpan.FromMinutes(10),
+				ClockSkew = TimeSpan.FromMinutes(30),
 				RequireExpirationTime = true,
 			};
 			var permission = new List<PermissionItem> {
-							   new PermissionItem {  Url="/", Name="Admin"},
-							   new PermissionItem {  Url="/api/values", Name="Admin"},
-							   new PermissionItem {  Url="/", Name="system"},
-							   new PermissionItem {  Url="/api/values1", Name="system"}
+							   //new PermissionItem {  Url="/", Name="Admin"},
+							   //new PermissionItem {  Url="/api/values", Name="Admin"},
+							   //new PermissionItem {  Url="/", Name="system"},
+							   //new PermissionItem {  Url="/api/values1", Name="system"}
 			};
 			var permissionRequirement = new PermissionRequirement(
 				"/api/denied",// 拒绝授权的跳转地址（目前无用）
@@ -70,7 +72,7 @@ namespace HeyMacchiato.Service.OAuth.Apps
 				"Jasonbourne",//发行人
 				"HeyMacchiato",//订阅人
 				 new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes("sdfsdfsrty45634kkhllghtdgdfss345t678fs")), SecurityAlgorithms.HmacSha256),//签名凭据
-				expiration: TimeSpan.FromSeconds(300)//接口的过期时间，注意这里没有了缓冲时间，你也可以自定义，在上边的TokenValidationParameters的 ClockSkew
+				expiration: TimeSpan.FromHours(2)//接口的过期时间，注意这里没有了缓冲时间，你也可以自定义，在上边的TokenValidationParameters的 ClockSkew
 			);
 			services.AddAuthentication(x =>
 			{
@@ -81,10 +83,14 @@ namespace HeyMacchiato.Service.OAuth.Apps
 			{
 				o.TokenValidationParameters = tokenValidationParameters;
 			});
+			services.AddSingleton(permissionRequirement);
 			#endregion
 			services.AddSwagger("Login");
-			services.AddSingleton(permissionRequirement);
-			services.AddOwnInject();
+		
+			services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyTom.Manage.Repository")))
+			   .AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
+			   .AsImplementedInterfaces()
+			   .WithScopedLifetime());
 			services.AddControllers();
 		}
 

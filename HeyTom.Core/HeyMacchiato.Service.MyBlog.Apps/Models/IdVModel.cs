@@ -16,4 +16,13 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Models
 
         public string content { get; set; }
     }
+
+    public class UpdateBlogVModel
+    {
+        public int id { get; set; }
+
+        public string name { get; set; }
+
+        public string content { get; set; }
+    }
 }

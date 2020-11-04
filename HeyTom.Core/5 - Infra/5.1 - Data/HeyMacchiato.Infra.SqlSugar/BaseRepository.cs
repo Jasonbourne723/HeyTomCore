@@ -13,6 +13,10 @@ namespace HeyMacchiato.Infra.SqlSugar
     {
         protected BaseDbContext<T> _db;
 
+        protected SimpleClient<T> _currentDb { get { return _db.CurrentDb; } }
+
+        protected SqlSugarClient _multipleDb { get { return _db.Db; } }
+
         #region 私有方法
 
         private static string GetSort(ListParam listParam, ref string select)

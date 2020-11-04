@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeyMacchiato.Service.Manage.Apps</name>
+    </assembly>
+    <members>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.MenuController.GetByEmail(HeyMacchiato.Service.Manage.Apps.Models.EmailVModel)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.MenuController.GetAllMenu">
+            <summary>
+            获取全部菜单
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.MenuController.GetByRole(HeyMacchiato.Service.Manage.Apps.Models.RoleIdVModel)">
+             <summary>
+            
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.MenuController.AddMainMenu(HeyMacchiato.Service.Manage.Apps.Models.AddMainMenuVModel)">
+            <summary>
+            新增主菜单
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.RoleController.GetAll">
+            <summary>
+            获取所有角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.RoleController.Add(HeyMacchiato.Service.Manage.Apps.Models.AddRoleVModel)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.RoleController.Remove(HeyMacchiato.Service.Manage.Apps.Models.RoleIdVModel)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.RoleController.Update(HeyMacchiato.Service.Manage.Apps.Models.RoleVModel)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.RoleController.SetMenuPermissions(HeyMacchiato.Service.Manage.Apps.Models.SetMenuPermissionVModel)">
+            <summary>
+            设置菜单权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.UserController.List">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

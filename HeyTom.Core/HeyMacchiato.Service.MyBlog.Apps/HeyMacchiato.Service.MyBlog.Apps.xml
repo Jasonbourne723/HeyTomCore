@@ -25,6 +25,26 @@
             <param name="param"></param>
             <returns></returns>
         </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.Add(HeyMacchiato.Service.MyBlog.Apps.Models.AddBlogVModel)">
+            <summary>
+            新增文章
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.Update(HeyMacchiato.Service.MyBlog.Apps.Models.UpdateBlogVModel)">
+            <summary>
+            修改文章
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.Remove(HeyMacchiato.Service.MyBlog.Apps.Models.IdVModel)">
+            <summary>
+            删除文章
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
         <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.CategoryController.GetAll">
             <summary>
             获取所有分类

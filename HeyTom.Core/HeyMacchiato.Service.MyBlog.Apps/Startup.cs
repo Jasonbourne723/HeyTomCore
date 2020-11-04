@@ -28,7 +28,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSwagger("Blog");
-            services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyTom.MyBlog.Respository")))
+            services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyTom.MyBlog.Repository")))
                 .AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());

@@ -14,8 +14,8 @@ namespace HeyMacchiato.Infra.MvcCore
 			{
 				if (!ModelState.IsValid)
 				{
-					result.ResultNo = 1;
-					result.Message = ModelState.Keys.SelectMany(x => ModelState[x].Errors.Select(y => new { x, y.ErrorMessage })).ToString();
+					result.ResultNo = -1;
+					result.Message = string.Join(",", ModelState.Keys.Select(x => ModelState[x].Errors[0].ErrorMessage)); 
 					return new ContentResult()
 					{
 						Content = JsonConvert.SerializeObject(result),
@@ -45,8 +45,8 @@ namespace HeyMacchiato.Infra.MvcCore
 			{
 				if (!ModelState.IsValid)
 				{
-					result.ResultNo = 1;
-					result.Message = ModelState.Keys.SelectMany(x => ModelState[x].Errors.Select(y => new { x, y.ErrorMessage })).ToString();
+					result.ResultNo = -1;
+					result.Message = string.Join(",", ModelState.Keys.Select(x => ModelState[x].Errors[0].ErrorMessage));
 					return new ContentResult()
 					{
 						Content = JsonConvert.SerializeObject(result),

@@ -6,7 +6,7 @@ using HeyMacchiato.Infra.MvcCore;
 using HeyMacchiato.Infra.Util;
 using HeyMacchiato.Service.MyBlog.Apps.Models;
 using HeyTom.MyBlog.Model;
-using HeyTom.MyBlog.Respository;
+using HeyTom.MyBlog.Repository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -29,7 +29,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
             {"categoryId","CategoryId"},
             { "authorId","AuthorId"},
             { "isDel","IsDel"}
-    };
+        };
 
 
         public BlogController(ILogger<BlogController> logger,
@@ -120,8 +120,10 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         public IActionResult Add([FromBody] AddBlogVModel param)
         {
             var result = new ResultModel();
-            return this.Wrapper(ref result,()=> {
-                _blogRepository.Add(new Blog() { 
+            return this.Wrapper(ref result, () =>
+            {
+                _blogRepository.Add(new Blog()
+                {
                     AuthorId = 1,
                     CategoryId = 1,
                     Content = param.content,
@@ -130,8 +132,50 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
                     Name = param.name,
                     Status = 1
                 });
+            }, true);
+        }
+
+        /// <summary>
+        /// 修改文章
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        [HttpPost("[action]")]
+        [ProducesDefaultResponseType(typeof(ResultModel))]
+        public IActionResult Update([FromBody] UpdateBlogVModel param)
+        {
+            var result = new ResultModel();
+                return this.Wrapper(ref result,()=> {
+
+                    var blog = _blogRepository.GetById(param.id);
+                    if (blog == null)
+                    {
+                        result.ResultNo = -1;
+                        result.Message = "未找到该文章";
+                        return;
+                    };
+                    blog.Name = param.name;
+                    blog.Content = param.content;
+                   result =  _blogRepository.Update(blog);
+                },true);
+        }
+
+
+        /// <summary>
+        /// 删除文章
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
+       [HttpPost("[action]")]
+       [ProducesDefaultResponseType(typeof(ResultModel))]
+        public IActionResult Remove([FromBody]IdVModel param)
+        {
+            var result = new ResultModel();
+            return this.Wrapper(ref result,()=> {
+              result =   _blogRepository.Remove(param.Id);
             },true);
         }
+
     }
 
 

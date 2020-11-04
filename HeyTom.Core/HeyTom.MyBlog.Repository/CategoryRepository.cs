@@ -3,7 +3,7 @@ using HeyMacchiato.Infra.SqlSugar;
 using HeyTom.MyBlog.Model;
 using System.Collections.Generic;
 
-namespace HeyTom.MyBlog.Respository
+namespace HeyTom.MyBlog.Repository
 {
     public class CategoryRepository : BaseRepository<Category>, ICategoryRepository
     {
