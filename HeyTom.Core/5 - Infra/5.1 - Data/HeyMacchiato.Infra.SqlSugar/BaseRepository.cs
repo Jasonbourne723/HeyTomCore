@@ -19,7 +19,7 @@ namespace HeyMacchiato.Infra.SqlSugar
 
         #region 私有方法
 
-        private static string GetSort(ListParam listParam, ref string select)
+        protected static string GetSort(ListParam listParam, ref string select)
         {
             var sort = "null";
             if (listParam.Sort != null && listParam.Sort.Count > 0)
@@ -38,7 +38,7 @@ namespace HeyMacchiato.Infra.SqlSugar
             return sort;
         }
 
-        private static string GetSelect(ListParam listParam)
+        protected static string GetSelect(ListParam listParam)
         {
             var select = " * ";
             if (listParam.Select != null && listParam.Select.Count > 0)
@@ -57,7 +57,7 @@ namespace HeyMacchiato.Infra.SqlSugar
             return select;
         }
 
-        private List<IConditionalModel> GetWhere(ListParam listParam)
+        protected List<IConditionalModel> GetWhere(ListParam listParam)
         {
             var where = new List<IConditionalModel>();
             listParam.Filter?.ForEach(ea =>
@@ -73,7 +73,7 @@ namespace HeyMacchiato.Infra.SqlSugar
             return where;
         }
 
-        private ConditionalType ToConditionalType(string operatorStr)
+        protected ConditionalType ToConditionalType(string operatorStr)
         {
             operatorStr = operatorStr.Trim();
             var conditionalType = ConditionalType.Equal;
@@ -164,7 +164,7 @@ namespace HeyMacchiato.Infra.SqlSugar
             return result;
         }
 
-        public PageResultModel<T1> GetPageResult<T1>(ListParam listParam) where T1 : class, new()
+        public virtual PageResultModel<T1> GetPageResult<T1>(ListParam listParam) where T1 : class, new()
         {
             int totalCount = 0;
             List<IConditionalModel> where = GetWhere(listParam);

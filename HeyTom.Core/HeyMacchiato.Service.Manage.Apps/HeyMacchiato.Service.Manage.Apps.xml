@@ -59,7 +59,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.UserController.List">
+        <member name="M:HeyMacchiato.Service.Manage.Apps.Controllers.UserController.List(HeyMacchiato.Infra.Util.ViewParam)">
             <summary>
             
             </summary>

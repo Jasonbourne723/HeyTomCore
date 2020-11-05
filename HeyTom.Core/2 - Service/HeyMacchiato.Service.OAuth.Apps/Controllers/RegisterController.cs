@@ -20,10 +20,13 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
     public class RegisterController : BaseController
     {
         private readonly IUserRepository _userRepository;
+        private readonly IUserRoleRepository _userRoleRepository;
 
-        public RegisterController(IUserRepository userRepository)
+        public RegisterController(IUserRepository userRepository,
+                                    IUserRoleRepository userRoleRepository)
         {
             _userRepository = userRepository;
+            _userRoleRepository = userRoleRepository;
         }
 
 
@@ -55,15 +58,22 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
                     return;
                 }
                 var pwd = Md5Helper.GenerateMD5(model.password);
-                result = _userRepository.Add(new HeyTom.Manage.Model.User()
+                var newUser = new HeyTom.Manage.Model.User()
                 {
                     Email = model.email,
                     Icon = "",
                     Name = model.nickName,
                     Pwd = pwd,
                     Remark = "",
-                    Status = 0
+                    Status = 1,
+                    CreateDate = DateTime.Now
+                };
+                result = _userRepository.Add(newUser);
+                _userRoleRepository.Add(new HeyTom.Manage.Model.UserRole() { 
+                    RoleId = 4,
+                    UserId = newUser.Id
                 });
+
             }, true);
         }
 

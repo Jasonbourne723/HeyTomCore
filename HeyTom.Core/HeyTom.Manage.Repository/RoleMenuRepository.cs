@@ -23,4 +23,7 @@ namespace HeyTom.Manage.Repository
         ResultModel DeleteByRoleId(int roleId);
 
     }
+
+
+   
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,4 +24,6 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Models
 
         public string content { get; set; }
     }
+
+
 }

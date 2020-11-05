@@ -1,4 +1,6 @@
-﻿namespace HeyMacchiato.Service.Manage.Apps.Models
+﻿using System;
+
+namespace HeyMacchiato.Service.Manage.Apps.Models
 {
     public class UserVModel
     {
@@ -11,6 +13,10 @@
         public short status { get; set; }
 
         public string remark { get; set; }
+
+        public DateTime createDate { get; set; }
+
+        public string icon { get; set; }
 
         public int roleId { get; set; }
 

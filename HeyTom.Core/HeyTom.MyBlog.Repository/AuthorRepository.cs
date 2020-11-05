@@ -19,4 +19,6 @@ namespace HeyTom.MyBlog.Repository
     public interface IAuthorRepository : IBaseRepository<Author>
     {
     }
+
+   
 }

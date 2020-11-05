@@ -2,6 +2,7 @@
 using HeyMacchiato.Infra.SqlSugar;
 using HeyTom.Manage.Model;
 using SqlSugar;
+using System.Collections.Generic;
 
 namespace HeyTom.Manage.Repository
 {
@@ -18,6 +19,7 @@ namespace HeyTom.Manage.Repository
                   .Where((role, userRole) => userRole.UserId == userId)
                   .Select((role, userRole) => new Role {Id = role.Id,Name = role.Name,Remark = role.Remark,Type = role.Type }).First();
         }
+
     }
 
     public interface IRoleRepository : IBaseRepository<Role>

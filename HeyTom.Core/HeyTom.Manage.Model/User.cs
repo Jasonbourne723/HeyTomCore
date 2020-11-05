@@ -1,4 +1,6 @@
-﻿namespace HeyTom.Manage.Model
+﻿using System;
+
+namespace HeyTom.Manage.Model
 {
     public class User
     {
@@ -15,6 +17,8 @@
         public string Pwd { get; set; }
 
         public  string Icon { get; set; }
+
+        public DateTime CreateDate { get; set; }
 
 
     }
