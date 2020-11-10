@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.Data\HeyMacchiato.Infra.Data.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Filter\HeyMacchiato.Infra.Filter.csproj" />
     <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj" />
     <ProjectReference Include="..\HeyTom.MyBlog.Model\HeyTom.MyBlog.Model.csproj" />
     <ProjectReference Include="..\HeyTom.MyBlog.Repository\HeyTom.MyBlog.Repository.csproj">

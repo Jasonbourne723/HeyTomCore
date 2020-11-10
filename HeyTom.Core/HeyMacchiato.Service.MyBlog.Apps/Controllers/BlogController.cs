@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HeyMacchiato.Infra.Filter;
 using HeyMacchiato.Infra.MvcCore;
 using HeyMacchiato.Infra.Util;
 using HeyMacchiato.Service.MyBlog.Apps.Models;
@@ -52,6 +53,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         [HttpPost]
         [Route("[action]")]
         [ProducesDefaultResponseType(typeof(PageResultModel<BlogVModel>))]
+        [NoAuthorizationAction]
 
         public IActionResult List([FromBody] ViewParam param)
         {
@@ -79,6 +81,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         [HttpPost]
         [Route("[action]")]
         [ProducesDefaultResponseType(typeof(TResultModel<BlogVModel>))]
+        [NoAuthorizationAction]
         public IActionResult GetOne([FromBody] IdVModel param)
         {
             var result = new TResultModel<BlogVModel>(1);
@@ -125,7 +128,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
                 _blogRepository.Add(new Blog()
                 {
                     AuthorId = 1,
-                    CategoryId = 1,
+                    CategoryId = param.categoryId,
                     Content = param.content,
                     CreateDate = DateTime.Now,
                     IsDel = 0,
@@ -156,6 +159,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
                     };
                     blog.Name = param.name;
                     blog.Content = param.content;
+                    blog.CategoryId = param.categoryId;
                    result =  _blogRepository.Update(blog);
                 },true);
         }

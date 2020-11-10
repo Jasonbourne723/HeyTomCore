@@ -8,4 +8,8 @@
     <None Remove="Blog.cs~RF57ab449.TMP" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="sqlSugarCore" Version="5.0.0.11" />
+  </ItemGroup>
+
 </Project>

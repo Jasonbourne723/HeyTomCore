@@ -29,10 +29,10 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Models
 
     public class UpdateCategoryVModel
     {
-        [Required]
+        [Required(ErrorMessage ="Id不能为空")]
         public int id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "名称不能为空")]
         public string name { get; set; }
 
         public string remark { get; set; }

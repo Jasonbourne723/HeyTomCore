@@ -12,6 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using HeyMacchiato.Infra.MvcCore;
+using HeyMacchiato.Infra.Filter;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace HeyMacchiato.Service.MyBlog.Apps
 {
@@ -32,7 +35,21 @@ namespace HeyMacchiato.Service.MyBlog.Apps
                 .AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
-            services.AddControllers();
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("sdfsdfsrty45634kkhllghtdgdfss345t678fs")),//参数配置在下边
+                ValidateIssuer = true,
+                ValidIssuer = "Jasonbourne",//发行人
+                ValidateAudience = true,
+                ValidAudience = "HeyMacchiato",//订阅人
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.FromMinutes(30),
+                RequireExpirationTime = true,
+            };
+            services.AddControllers(option=> {
+                option.Filters.Add(new JwtAuthorziationActionAttribute(tokenValidationParameters));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,7 +62,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps
 
             app.UseRouting();
 
-            app.UseAuthorization();
+        //    app.UseAuthorization();
 
             app.UseSwaggerUI("Blog");
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using HeyMacchiato.Infra.Encryption.Md5;
+using HeyMacchiato.Infra.Filter;
 using HeyMacchiato.Infra.Jwt;
 using HeyMacchiato.Infra.MvcCore;
 using HeyMacchiato.Infra.Util;
@@ -40,6 +41,7 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
         /// <returns></returns>
         [HttpGet]
         [ProducesDefaultResponseType(typeof(TResultModel<TokenVModel>))]
+        [NoAuthorizationAction]
         public IActionResult Get(string email, string password)
         {
             var result = new TResultModel<TokenVModel>(1);
@@ -57,9 +59,10 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
                 else
                 {
                     var jwtstr = JwtHelper.BuildJwtToken(new Claim[3]{
-                            new Claim(ClaimTypes.Role,"admin"),
-                            new Claim("name",user.Name),
-                            new Claim("id",user.Id.ToString())
+                           // new Claim(ClaimTypes.Role,"admin"),
+                            new Claim("userName",user.Name),
+                            new Claim("userId",user.Id.ToString()),
+                            new Claim("email",user.Email),
                         }, _permissionRequirement);
                     result.TModel = new TokenVModel()
                     {
@@ -80,41 +83,21 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
             var result = new TResultModel<UserInfoVModel>(1);
             return this.Wrapper(ref result, () =>
             {
-                StringValues token = "";
-                if (this.HttpContext.Request.Headers.TryGetValue("Authorization", out token))
-                {
-                    var payload = JwtHelper.SerializeJwt(token);
-                    object userId;
-                    if (payload.TryGetValue("id", out userId))
-                    {
-                        var user = _userRepository.GetById(long.Parse(userId.ToString()));
-                        if (user == null)
-                        {
-                            result.ResultNo = -1;
-                            result.Message = "凭证错误";
-                            return;
-                        }
-                        result.TModel = new UserInfoVModel()
-                        {
-                            email = user.Email,
-                            id = user.Id,
-                            name  = user.Name,
-                            remark = user.Remark
-                        };
-                    }
-                    else
-                    {
-                        result.ResultNo = -1;
-                        result.Message = "凭证错误";
-                        return;
-                    }
-                }
-                else
+                var userId = this._claimEntity.userId;
+                var user = _userRepository.GetById(userId);
+                if (user == null)
                 {
                     result.ResultNo = -1;
-                    result.Message = "凭证错误";
+                    result.Message = "用户信息有误";
                     return;
                 }
+                result.TModel = new UserInfoVModel()
+                {
+                    email = user.Email,
+                    id = user.Id,
+                    name = user.Name,
+                    remark = user.Remark
+                };
             }, true);
         }
 

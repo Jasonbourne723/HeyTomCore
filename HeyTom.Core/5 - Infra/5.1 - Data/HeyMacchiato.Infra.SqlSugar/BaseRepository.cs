@@ -30,7 +30,7 @@ namespace HeyMacchiato.Infra.SqlSugar
                     sort += $"{listParam.Sort[i].DbField} {listParam.Sort[i].Value}";
                     if (i != listParam.Sort.Count - 1)
                     {
-                        select += ",";
+                        sort += ",";
                     }
                 }
             }

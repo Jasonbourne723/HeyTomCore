@@ -8,6 +8,15 @@ namespace HeyMacchiato.Infra.MvcCore
 {
 	public class BaseController : ControllerBase
 	{
+		public BaseController()
+		{
+			_authType = true;
+		}
+
+		public bool _authType;
+
+		public ClaimEntity _claimEntity { get; set; }
+
 		protected IActionResult Wrapper(ref ResultModel result, Action action, bool isVaild)
 		{
 			if (isVaild)
@@ -69,5 +78,25 @@ namespace HeyMacchiato.Infra.MvcCore
 				ContentType = "application/json;charset=utf-8",
 			};
 		}
+
 	}
+
+	public class ClaimEntity
+	{
+        public ClaimEntity(int userId, string userName, string email)
+        {
+            this.userId = userId;
+            this.userName = userName;
+            this.email = email;
+        }
+
+        public int userId { get;  }
+
+        public string userName { get;  }
+
+
+        public string email { get; }
+
+
+    }
 }

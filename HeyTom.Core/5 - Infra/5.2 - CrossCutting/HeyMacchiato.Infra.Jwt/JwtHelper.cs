@@ -68,12 +68,13 @@ namespace HeyMacchiato.Infra.Jwt
 		/// </summary>
 		/// <param name="jwtStr"></param>
 		/// <returns></returns>
-		public static JwtPayload SerializeJwt(string jwtStr)
+		public static JwtSecurityToken SerializeJwt(string jwtStr, TokenValidationParameters tokenValidationParameters)
 		{
 			jwtStr = jwtStr.Replace("Bearer ", "");
 			var jwtHander = new JwtSecurityTokenHandler();
+			var a = jwtHander.ValidateToken(jwtStr, tokenValidationParameters, out SecurityToken validated);
 			var jwtToken = jwtHander.ReadJwtToken(jwtStr);
-			return jwtToken.Payload;
+			return jwtToken;
 		}
 	}
 }

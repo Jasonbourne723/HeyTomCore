@@ -15,24 +15,6 @@ namespace HeyMacchiato.Service.QuartzTask
 	{
 		static void Main(string[] args)
 		{
-           //var _schedulerService = new StdSchedulerFactory().GetScheduler().Result;//定义计划者
-           // // 定义作业并将其绑定到HelloJob类
-           // IJobDetail job = JobBuilder.Create<DailyTaskJob>()
-           //     .WithIdentity($"12fd3232", "dailyTaskJob")
-           //     .Build();
-           // // 触发作业运行
-           // ITrigger trigger = TriggerBuilder.Create()
-           //     .WithIdentity($"asffddsdf", "dailyTaskTrigger")
-           //     .StartNow()
-           //     //.StartAt(dailyTaskDTO.JobDate)
-           //     .Build();
-
-           // _schedulerService.ScheduleJob(job, trigger);
-
-           // _schedulerService.Start();
-
-           // Console.ReadKey();
-
 
             var services = new ServiceCollection();
             services.AddSingleton<SchedulerService>();

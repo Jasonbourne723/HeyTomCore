@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HeyMacchiato.Infra.Filter;
 using HeyMacchiato.Infra.MvcCore;
 using HeyMacchiato.Infra.Util;
 using HeyMacchiato.Service.MyBlog.Apps.Models;
@@ -28,6 +29,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         /// <returns></returns>
         [HttpPost("[action]")]
         [ProducesDefaultResponseType(typeof(TResultModel<AuthorVModel>))]
+        [NoAuthorizationAction]
         public IActionResult GetOne([FromBody] IdVModel param)
         {
             var result = new TResultModel<AuthorVModel>(1);

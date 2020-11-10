@@ -11,6 +11,26 @@
             <param name="param"></param>
             <returns></returns>
         </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogCommentController.List(HeyMacchiato.Infra.Util.ViewParam)">
+            <summary>
+            获取博客评论列表
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogCommentController.Add(HeyMacchiato.Service.MyBlog.Apps.Models.AddBlogCommentVModel)">
+            <summary>
+            新增文章评论
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogCommentController.Remove(HeyMacchiato.Service.MyBlog.Apps.Models.IdVModel)">
+            <summary>
+            删除文章评论
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
         <member name="M:HeyMacchiato.Service.MyBlog.Apps.Controllers.BlogController.List(HeyMacchiato.Infra.Util.ViewParam)">
             <summary>
             获取博客列表

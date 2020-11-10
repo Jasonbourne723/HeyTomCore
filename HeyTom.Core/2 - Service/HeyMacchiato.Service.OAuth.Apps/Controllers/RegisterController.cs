@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using HeyMacchiato.Service.OAuth.Apps.Models;
 using HeyMacchiato.Infra.Encryption.Md5;
 using HeyTom.Manage.Repository;
+using HeyMacchiato.Infra.Filter;
 
 namespace HeyMacchiato.Service.OAuth.Apps.Controllers
 {
@@ -38,6 +39,7 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
         /// <returns></returns>
         [HttpPost]
         [ProducesDefaultResponseType(typeof(ResultModel))]
+        [NoAuthorizationAction]
         public IActionResult Post([FromBody] RegisterVModel model)
         {
             var result = new ResultModel();
@@ -85,6 +87,7 @@ namespace HeyMacchiato.Service.OAuth.Apps.Controllers
         [Route("[action]")]
         [HttpPost]
         [ProducesDefaultResponseType(typeof(TResultModel<VerificationCodeVModel>))]
+        [NoAuthorizationAction]
         public IActionResult VerificationCode([FromBody] EmailVModel model)
         {
             var result = new ResultModel(1);

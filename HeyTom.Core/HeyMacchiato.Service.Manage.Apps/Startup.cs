@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using HeyMacchiato.Infra.Filter;
 
 namespace HeyMacchiato.Service.Manage.Apps
 {
@@ -38,7 +39,13 @@ namespace HeyMacchiato.Service.Manage.Apps
                 .AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
-            #region  Jwt
+            //services.AddAuthorization(option =>
+            //{
+            //    option.AddPolicy("Over21", policy => policy.Requirements.Add(permissionRequirement));
+            //});
+
+            // 依赖注入，将自定义的授权处理器 匹配给官方授权处理器接口，这样当系统处理授权的时候，就会直接访问我们自定义的授权处理器了。
+            //services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -51,34 +58,9 @@ namespace HeyMacchiato.Service.Manage.Apps
                 ClockSkew = TimeSpan.FromMinutes(30),
                 RequireExpirationTime = true,
             };
-            var permission = new List<PermissionItem>
-            {
-                //new PermissionItem {  Url="/", Name="Admin"},
-                //new PermissionItem {  Url="/api/values", Name="Admin"},
-                //new PermissionItem {  Url="/", Name="system"},
-                //new PermissionItem {  Url="/api/values1", Name="system"}
-            };
-            var permissionRequirement = new PermissionRequirement(
-                "/api/denied",// 拒绝授权的跳转地址（目前无用）
-                permission,//权限集合
-                ClaimTypes.Role,//基于角色的授权
-                "Jasonbourne",//发行人
-                "HeyMacchiato",//订阅人
-                 new SigningCredentials(new SymmetricSecurityKey(Encoding.ASCII.GetBytes("sdfsdfsrty45634kkhllghtdgdfss345t678fs")), SecurityAlgorithms.HmacSha256),//签名凭据
-                expiration: TimeSpan.FromHours(2)//接口的过期时间，注意这里没有了缓冲时间，你也可以自定义，在上边的TokenValidationParameters的 ClockSkew
-            );
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
-            .AddJwtBearer(o =>
-            {
-                o.TokenValidationParameters = tokenValidationParameters;
+            services.AddControllers(option => {
+                option.Filters.Add(new HeyMacchiato.Infra.Filter.JwtAuthorziationActionAttribute(tokenValidationParameters));
             });
-            services.AddSingleton(permissionRequirement);
-            #endregion
-            services.AddControllers(option => { option.Filters.Add(new AuthorizeFilter()); });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

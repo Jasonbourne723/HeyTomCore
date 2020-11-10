@@ -67,7 +67,8 @@ namespace HeyMacchiato.Infra.Jwt
 						}
 					}
 					//判断过期时间
-					if (DateTime.Parse(httpContext.User.Claims.SingleOrDefault(s => s.Type == "exp").Value) >= DateTime.Now)
+					var ext = GetDateTime(httpContext.User.Claims.SingleOrDefault(s => s.Type == "exp").Value);
+					if (ext >= DateTime.Now)
 					{
 						context.Succeed(requirement);
 					}
@@ -86,6 +87,20 @@ namespace HeyMacchiato.Infra.Jwt
 				return;
 			}
 			context.Succeed(requirement);
+		}
+
+		/// <summary>  
+		/// 时间戳Timestamp转换成日期  
+		/// </summary>  
+		/// <param name="timeStamp"></param>  
+		/// <returns></returns>  
+		private DateTime GetDateTime(string timeStamp)
+		{
+			DateTime dtStart = TimeZone.CurrentTimeZone.ToLocalTime(new DateTime(1970, 1, 1));
+			long lTime = long.Parse(timeStamp + "0000000");
+			TimeSpan toNow = new TimeSpan(lTime);
+			DateTime targetDt = dtStart.Add(toNow);
+			return dtStart.Add(toNow);
 		}
 	}
 }
