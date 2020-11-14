@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\3 - Application\HeyMacchiato.Application.QuartzTask\HeyMacchiato.Application.QuartzTask.csproj" />
-    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Queue\HeyMachiato.Infra.Queue.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Rabbitmq\HeyMachiato.Infra.Rabbitmq.csproj" />
   </ItemGroup>
 
   <ItemGroup>

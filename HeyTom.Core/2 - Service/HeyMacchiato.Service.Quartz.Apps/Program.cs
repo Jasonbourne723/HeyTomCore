@@ -1,5 +1,5 @@
 ﻿using HeyMacchiato.Application.QuartzTask.Service;
-using HeyMachiato.Infra.Queue.RabbitMq;
+using HeyMachiato.Infra.RabbitMq;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;

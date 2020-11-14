@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Queue\HeyMachiato.Infra.Queue.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Queue\HeyMachiato.Infra.Rabbitmq.csproj" />
+    <ProjectReference Include="..\..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Rabbitmq\HeyMachiato.Infra.Rabbitmq.csproj" />
     <ProjectReference Include="..\..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Email\HeyMacchiato.Infra.Email.csproj" />
   </ItemGroup>
 

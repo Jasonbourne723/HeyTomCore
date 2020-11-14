@@ -9,10 +9,10 @@ namespace HeyMacchiato.Infra.CsRedis
 		RedisClient _client;
 		public CsRedisBase()
 		{
-			var host = "120.79.8.60";
-			var port = 9000;
+			var host = "localhost";
+			var port = 6379;
 			_client = new RedisClient(host, port);
-			_client.Auth("Cebsaas2015");
+			//_client.Auth("Cebsaas2015");
 		}
 
 		public void set(string key, string value)

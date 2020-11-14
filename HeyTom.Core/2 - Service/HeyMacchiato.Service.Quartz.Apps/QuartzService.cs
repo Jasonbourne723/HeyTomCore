@@ -1,6 +1,6 @@
 ﻿using HeyMacchiato.Application.QuartzTask.DTO;
 using HeyMacchiato.Application.QuartzTask.Service;
-using HeyMachiato.Infra.Queue.RabbitMq;
+using HeyMachiato.Infra.RabbitMq;
 using System;
 using System.Collections.Generic;
 using System.Text;
