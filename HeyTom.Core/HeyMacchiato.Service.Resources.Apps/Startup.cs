@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Loader;
+using System.Text;
 using System.Threading.Tasks;
+using HeyMacchiato.Infra.Filter;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +12,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using HeyMacchiato.Infra.MvcCore;
-using HeyMacchiato.Infra.Filter;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.IO;
+using HeyMacchiato.Infra.MvcCore;
+using System.Runtime.Loader;
+using System.Reflection;
 
-namespace HeyMacchiato.Service.MyBlog.Apps
+namespace HeyMacchiato.Service.Resources.Apps
 {
     public class Startup
     {
@@ -31,8 +31,8 @@ namespace HeyMacchiato.Service.MyBlog.Apps
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSwagger("Blog");
-            services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyTom.MyBlog.Repository")))
+            services.AddSwagger("Resources");
+            services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyTom.Resources.Repository")))
                 .AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
                 .AsImplementedInterfaces()
                 .WithScopedLifetime());
@@ -48,7 +48,7 @@ namespace HeyMacchiato.Service.MyBlog.Apps
                 ClockSkew = TimeSpan.FromMinutes(30),
                 RequireExpirationTime = true,
             };
-            services.AddControllers(option=> {
+            services.AddControllers(option => {
                 option.Filters.Add(new JwtAuthorziationActionAttribute(tokenValidationParameters));
             });
         }
@@ -63,15 +63,16 @@ namespace HeyMacchiato.Service.MyBlog.Apps
 
             app.UseRouting();
 
-        //    app.UseAuthorization();
+            //    app.UseAuthorization();
 
-            app.UseSwaggerUI("Blog");
+            app.UseSwaggerUI("Resources");
 
             if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")))
             {
                 Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"));
             }
-            app.UseStaticFiles(new StaticFileOptions() {
+            app.UseStaticFiles(new StaticFileOptions()
+            {
                 FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"))
             }); // For the wwwroot folder
 

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HeyMacchiato.Service.Resources.Apps</name>
+    </assembly>
+    <members>
+        <member name="M:HeyMacchiato.Service.Resources.Apps.Controllers.PhotoAlbumController.List(HeyMacchiato.Infra.Util.ViewParam)">
+            <summary>
+            获取相册列表
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Resources.Apps.Controllers.PhotoAlbumController.GetOne(HeyMacchiato.Service.Resources.Apps.Models.PhotoAlbumIdVModel)">
+            <summary>
+            查询单个相册
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Resources.Apps.Controllers.PhotoAlbumController.Add(HeyMacchiato.Service.Resources.Apps.Models.AddPhotoAlbumVModel)">
+            <summary>
+            新增相册
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Resources.Apps.Controllers.PhotoAlbumController.Update(HeyMacchiato.Service.Resources.Apps.Models.UpdatePhotoAlbumVModel)">
+            <summary>
+            修改相册
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HeyMacchiato.Service.Resources.Apps.Controllers.PhotoAlbumController.Remove(HeyMacchiato.Service.Resources.Apps.Models.PhotoAlbumIdVModel)">
+            <summary>
+            删除相册
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

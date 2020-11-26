@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>HeyMacchiato.Service.Resources.Apps.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scrutor" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Filter\HeyMacchiato.Infra.Filter.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.MvcCore\HeyMacchiato.Infra.MvcCore.csproj" />
+    <ProjectReference Include="..\HeyTom.Resources.Repository\HeyTom.Resources.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="HeyMacchiato.Service.Resources.Apps.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>

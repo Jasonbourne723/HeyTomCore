@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BgService\TestBackground.cs~RFfc424e.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="3.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\5 - Infra\5.1 - Data\HeyMacchiato.Infra.CsRedis\HeyMacchiato.Infra.CsRedis.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.1 - Data\HeyMachiato.Infra.Rabbitmq\HeyMachiato.Infra.Rabbitmq.csproj" />
+    <ProjectReference Include="..\5 - Infra\5.2 - CrossCutting\HeyMacchiato.Infra.Jwt\HeyMacchiato.Infra.Jwt.csproj" />
+  </ItemGroup>
+
+
+</Project>

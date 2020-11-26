@@ -27,6 +27,17 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Models
 
         public short isDel { get; set; }
 
+        public short isTop { get; set; }
+
+        public List<TagVModel> tags { get; set; }
+
+    }
+
+    public class TagVModel
+    {
+        public int tagId { get; set; }
+
+        public string tagName { get; set; }
     }
 
     public class AuthorVModel

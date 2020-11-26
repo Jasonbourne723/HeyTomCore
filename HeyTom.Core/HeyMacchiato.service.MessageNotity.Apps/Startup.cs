@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Loader;
+using System.Text;
 using System.Threading.Tasks;
+using HeyMacchiato.service.MessageNotity.Apps.BgService;
+using HeyMacchiato.service.MessageNotity.Apps.Controllers;
+using HeyMachiato.Infra.RabbitMq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -11,13 +13,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using HeyMacchiato.Infra.MvcCore;
-using HeyMacchiato.Infra.Filter;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.IO;
 
-namespace HeyMacchiato.Service.MyBlog.Apps
+namespace HeyMacchiato.service.MessageNotity.Apps
 {
     public class Startup
     {
@@ -31,11 +29,16 @@ namespace HeyMacchiato.Service.MyBlog.Apps
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSwagger("Blog");
-            services.Scan(scan => scan.FromAssemblies(AssemblyLoadContext.Default.LoadFromAssemblyName(new AssemblyName("HeyTom.MyBlog.Repository")))
-                .AddClasses(x => x.Where(y => y.Name.EndsWith("Repository", StringComparison.OrdinalIgnoreCase)))
-                .AsImplementedInterfaces()
-                .WithScopedLifetime());
+
+            services.AddSignalR();
+
+            services.AddCors(options => {
+                options.AddPolicy("SignalRCors", policy => policy.AllowAnyOrigin()
+                                                                 .AllowAnyHeader()
+                                                                 .AllowAnyMethod()
+                                                            );
+
+            });
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -48,9 +51,11 @@ namespace HeyMacchiato.Service.MyBlog.Apps
                 ClockSkew = TimeSpan.FromMinutes(30),
                 RequireExpirationTime = true,
             };
-            services.AddControllers(option=> {
-                option.Filters.Add(new JwtAuthorziationActionAttribute(tokenValidationParameters));
-            });
+            services.AddSingleton(tokenValidationParameters);
+            services.AddHttpContextAccessor();
+            services.AddSingleton<IRabbitMqService, RabbitMqService>();
+            services.AddControllers();
+            services.AddHostedService<SubscribeService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,24 +65,13 @@ namespace HeyMacchiato.Service.MyBlog.Apps
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("SignalRCors");
             app.UseRouting();
-
-        //    app.UseAuthorization();
-
-            app.UseSwaggerUI("Blog");
-
-            if (!Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")))
-            {
-                Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"));
-            }
-            app.UseStaticFiles(new StaticFileOptions() {
-                FileProvider = new Microsoft.Extensions.FileProviders.PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"))
-            }); // For the wwwroot folder
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<CommentHub>("/CommentHub");
             });
         }
     }

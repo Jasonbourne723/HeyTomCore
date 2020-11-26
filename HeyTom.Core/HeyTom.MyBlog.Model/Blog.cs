@@ -20,6 +20,25 @@ namespace HeyTom.MyBlog.Model
         public short Status { get; set; }
 
         public short IsDel { get; set; }
+
+        public short IsTop { get; set; }
+    }
+
+    public class Tag
+    {
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+    }
+
+    public class BlogTagModel
+    {
+
+        public int BlogId { get; set; }
+
+        public int TagId { get; set; }
+
+        public string TagName { get; set; }
     }
 
 }

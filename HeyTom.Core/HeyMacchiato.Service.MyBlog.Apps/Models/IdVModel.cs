@@ -19,6 +19,10 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Models
         [Required(ErrorMessage = "文章内容不能为空")]
         public string content { get; set; }
         public int categoryId { get; set; }
+
+        public short status { get; set; }
+
+        public short isTop { get; set; }
     }
 
     public class UpdateBlogVModel
@@ -30,7 +34,15 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Models
         [Required(ErrorMessage = "文章内容不能为空")]
         public string content { get; set; }
         public int categoryId { get; set; }
+        public short status { get; set; }
 
+        public short isTop { get; set; }
+
+    }
+
+    public class FileNameVModel
+    {
+        public string fileName { get; set; }
     }
 
 

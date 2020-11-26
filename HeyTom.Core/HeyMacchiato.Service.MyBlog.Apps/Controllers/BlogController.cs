@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using HeyMacchiato.Infra.Filter;
@@ -8,8 +9,10 @@ using HeyMacchiato.Infra.Util;
 using HeyMacchiato.Service.MyBlog.Apps.Models;
 using HeyTom.MyBlog.Model;
 using HeyTom.MyBlog.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
 namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
 {
@@ -21,28 +24,31 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         private readonly IBlogRepository _blogRepository;
         private readonly ICategoryRepository _categoryRepository;
         private readonly IAuthorRepository _authorRepository;
+        private readonly ITagRepository _tagRepository;
         private Dictionary<string, string> dicBlog = new Dictionary<string, string>() {
             { "id","Id"},
             { "name","Name"},
-            { "content","Content"},
             { "status","Status"},
             {"createDate","CreateDate"},
             {"categoryId","CategoryId"},
             { "authorId","AuthorId"},
-            { "isDel","IsDel"}
+            { "isDel","IsDel"},
+            { "isTop","IsTop"},
         };
 
 
         public BlogController(ILogger<BlogController> logger,
                             IBlogRepository blogRepository,
                             ICategoryRepository categoryRepository,
-                            IAuthorRepository authorRepository
+                            IAuthorRepository authorRepository,
+                            ITagRepository tagRepository
             )
         {
             _logger = logger;
             _blogRepository = blogRepository;
             _categoryRepository = categoryRepository;
             _authorRepository = authorRepository;
+            _tagRepository = tagRepository;
         }
 
         /// <summary>
@@ -61,13 +67,35 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
             return this.Wrapper(ref result, () =>
             {
                 var listparam = ConvertRequest.Convert(param, dicBlog);
+                if (param.Filter?.Exists(x => x.Field == "tagId") ?? false)
+                {
+                    var tagId = param.Filter.FirstOrDefault(x => x.Field == "tagId").Value;
+                    var blogTags = _tagRepository.GetBlogByTagIds(new List<int>() { int.Parse(tagId) });
+                    if (blogTags != null && blogTags.Count > 0)
+                    {
+                        listparam.Filter.Add(new FilterModel()
+                        {
+                            Field = "id",
+                            DbField = "Id",
+                            Connector = "and ",
+                            Operator = "in",
+                            Value = string.Join(",", blogTags.Select(x => x.BlogId))
+                        });
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
                 var r = _blogRepository.GetPageResult<BlogVModel>(listparam);
                 var categroys = _categoryRepository.GetInUse();
                 var author = _authorRepository.GetById(1);
+                var tags = _tagRepository.GetByBlogIds(r.TModel?.Select(x => x.id)?.ToList());
                 r.TModel?.ForEach(ea =>
                 {
                     ea.categoryName = categroys?.FirstOrDefault(x => x.Id == ea.categoryId)?.Name;
                     ea.authorName = author?.Name;
+                    ea.tags = tags?.FindAll(x => x.BlogId == ea.id)?.Select(x => new TagVModel() { tagId = x.TagId, tagName = x.TagName }).ToList();
                 });
                 result = r;
             }, false);
@@ -106,7 +134,8 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
                     name = blog.Name,
                     createDate = blog.CreateDate,
                     categoryName = category?.Name,
-                    authorName = author?.Name
+                    authorName = author?.Name,
+                    isTop = blog.IsTop
                 };
             }, true);
 
@@ -133,7 +162,8 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
                     CreateDate = DateTime.Now,
                     IsDel = 0,
                     Name = param.name,
-                    Status = 1
+                    Status = param.status,
+                    IsTop = param.isTop
                 });
             }, true);
         }
@@ -148,20 +178,23 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         public IActionResult Update([FromBody] UpdateBlogVModel param)
         {
             var result = new ResultModel();
-                return this.Wrapper(ref result,()=> {
+            return this.Wrapper(ref result, () =>
+            {
 
-                    var blog = _blogRepository.GetById(param.id);
-                    if (blog == null)
-                    {
-                        result.ResultNo = -1;
-                        result.Message = "未找到该文章";
-                        return;
-                    };
-                    blog.Name = param.name;
-                    blog.Content = param.content;
-                    blog.CategoryId = param.categoryId;
-                   result =  _blogRepository.Update(blog);
-                },true);
+                var blog = _blogRepository.GetById(param.id);
+                if (blog == null)
+                {
+                    result.ResultNo = -1;
+                    result.Message = "未找到该文章";
+                    return;
+                };
+                blog.Name = param.name;
+                blog.Content = param.content;
+                blog.CategoryId = param.categoryId;
+                blog.Status = param.status;
+                blog.IsTop = param.isTop;
+                result = _blogRepository.Update(blog);
+            }, true);
         }
 
 
@@ -170,14 +203,15 @@ namespace HeyMacchiato.Service.MyBlog.Apps.Controllers
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-       [HttpPost("[action]")]
-       [ProducesDefaultResponseType(typeof(ResultModel))]
-        public IActionResult Remove([FromBody]IdVModel param)
+        [HttpPost("[action]")]
+        [ProducesDefaultResponseType(typeof(ResultModel))]
+        public IActionResult Remove([FromBody] IdVModel param)
         {
             var result = new ResultModel();
-            return this.Wrapper(ref result,()=> {
-              result =   _blogRepository.Remove(param.Id);
-            },true);
+            return this.Wrapper(ref result, () =>
+            {
+                result = _blogRepository.Remove(param.Id);
+            }, true);
         }
 
     }
