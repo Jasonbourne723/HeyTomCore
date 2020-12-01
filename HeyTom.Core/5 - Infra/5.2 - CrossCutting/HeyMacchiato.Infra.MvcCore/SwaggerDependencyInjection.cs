@@ -17,7 +17,7 @@ namespace HeyMacchiato.Infra.MvcCore
 			//注册Swagger生成器，定义一个和多个Swagger 文档
 			return services.AddSwaggerGen(c =>
 			{
-				var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.XML";
+				var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
 				var xmlPath = System.IO.Path.Combine(AppContext.BaseDirectory, $"{xmlFile}");
 				c.IncludeXmlComments(xmlPath);
 				c.SwaggerDoc("v1", new OpenApiInfo
